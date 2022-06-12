@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { client ,urlFor } from '../../lib/client';
 import { AiOutlineMinus , AiOutlinePlus , AiFillStar , AiOutlineStar } from 'react-icons/ai';
 import { Product } from '../../components';
-import { useStateContext } from '../../context/StateContext'
+import { useStateContext } from '../../context/StateContext';
+import Numeral from "numeral"
 
 
 const ProductDetails = ({product,products}) => {
     //구조 분해 할당
     const {image,name,details,price} = product;
     const [index,setIndex] = useState(0);
-    const {decQty , incQty , qty} = useStateContext();
+    const {decQty , incQty , qty , onAdd} = useStateContext();
     return (
         <div>
             <div className="product-detail-container">
@@ -37,7 +38,7 @@ const ProductDetails = ({product,products}) => {
                     </div>
                     <h4>상세설명 : </h4>
                     <p>{details}</p>
-                    <p className="price">${price}</p>
+                    <p className="price">{Numeral(price).format(0,0)}원</p>
                     <div className="quantity">
                         <h3>수량:</h3>
                         <p className="quantity-desc">
@@ -53,12 +54,11 @@ const ProductDetails = ({product,products}) => {
                         </p>
                     </div>
                     <div className="buttons">
-                        <button type="button" className="add-to-cart" onClick="">장바구니에 담기</button>
+                        <button type="button" className="add-to-cart" onClick={()=>onAdd(product,qty)}>장바구니에 담기</button>
                         <button type="button" className="buy-now" onClick="">구매하기</button>
                     </div>
                 </div>
             </div>
-            
             <div className="maylike-products-wrapper">
                 <h2>다른 고객이 함께 구매한 상품</h2>
                 <div className="marquee">
