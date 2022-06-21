@@ -12,23 +12,21 @@ const Cart = () => {
     const cartRef = useRef();
     const {totalPrice , totalQuantities , cartItems , setShowCart ,toggleCartItemQuanitity , onRemove} = useStateContext();
 
-    const handleCheckOut = async () =>{
+    const handleCheckOut = async () => {
         const stripe = await getStripe();
 
-        const responce = await fetch('/api/stripe' , {
+        const response = await fetch('/api/stripe' , {
             method:'POST',
-        
             headers: {
                 'Content-Type' : 'application/json' , 
             },
-
+            //body = 장바구니 항목 
             body:JSON.stringify(cartItems),
-
         });
 
-        if(responce.statusCode === 500) return;
-
-        const data = await responce.json();
+        if(response.statusCode === 500) return;
+        //응답이 500 이 아닌 경우 실행
+        const data = await response.json();
 
         toast.loading("로딩중 ...");
 

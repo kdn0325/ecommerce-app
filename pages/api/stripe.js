@@ -4,8 +4,6 @@ const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-
-    console.log(req.body.cartItems)
     try {
       const params = {
         submit_type: 'pay',
@@ -13,22 +11,22 @@ export default async function handler(req, res) {
         payment_method_types: ['card'],
         billing_address_collection: 'auto',
         shipping_options: [
-          { shipping_rate: 'shr_1LBaLNAt1XOPMalyKZugEtUR' },
-          { shipping_rate: 'shr_1LBaMoAt1XOPMalyXtIwAK5W' },
+          //stripe 키
+          { shipping_rate: 'shr_1LD2mgAt1XOPMalyIEIVC46Y' },
         ],
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;
-          const newImage = img.replace('image-','https://cdn.sanity.io/images/ijkppnuo/production/').replace('-jpg', '.webp');
-          console.log("IMAGE", newImage)
+          //sanity 데이터 저장소 이미지값
+          const newImage = img.replace('image-','https://cdn.sanity.io/images/ijkppnuo/production/').replace('-webp', '.webp');
 
           return {
             price_data: { 
-              currency: 'usd',
+              currency: 'krw',
               product_data: { 
                 name: item.name,
                 images: [newImage],
               },
-              unit_amount: item.price * 100,
+              unit_amount: item.price,
             },
             adjustable_quantity: {
               enabled:true,
@@ -50,6 +48,6 @@ export default async function handler(req, res) {
     }
   } else {
     res.setHeader('Allow', 'POST');
-    res.status(405).end('Method Not Allowed');
+    res.status(405).end('방법이 허락되지 않았습니다');
   }
 }

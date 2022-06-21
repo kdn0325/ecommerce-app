@@ -114,7 +114,7 @@ export const StateContext = ({children}) => {
     return (
 
         //value prop을 받아서 하위 컴포넌트에게 전달함
-        <Context.Provider value={{showCart,cartItems,totalPrice,totalQuantities,qty,incQty,decQty,onAdd,setShowCart,toggleCartItemQuanitity,onRemove}}>
+        <Context.Provider value={{showCart,cartItems,totalPrice,totalQuantities,qty,incQty,decQty,onAdd,setShowCart,toggleCartItemQuanitity,onRemove,setCartItems,setTotalPrice,setTotalQuantities}}>
             {children}
         </Context.Provider>
     )
