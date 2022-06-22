@@ -1,0 +1,6 @@
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 18px;
+    position: relative;
+}

@@ -4,6 +4,194 @@ import { AiOutlineMinus , AiOutlinePlus , AiFillStar , AiOutlineStar } from 'rea
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 import Numeral from "numeral"
+import styled from 'styled-components';
+
+const ProductDetailContainer = styled.div`
+    display: flex;
+    gap: 40px;
+    margin: 60px 40px 40px;
+    color: #324d67;
+
+    @media screen and (max-width:800px){
+        flex-wrap: wrap;
+        margin: 20px;
+    }
+`
+const ProductDetailImg = styled.img`
+    border-radius: 15px;
+    background-color: #ebebeb;
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+
+    @media screen and (max-width:800px){
+        width: 350px;
+        height: 350px;
+    }
+    
+    &:hover{
+        background-color: #f02d34;
+    }
+`
+const ImgContainer = styled.div`
+
+`
+const SmallImgContainer = styled.div`
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+
+    .small-image{
+        border-radius: 8px;
+        background-color: #ebebeb;
+        width: 70px;
+        height: 70px;
+        cursor: pointer;
+    }
+    .selected-image{
+        background-color:#f02d34;
+    }
+`
+const ProductDetailDesc = styled.div`
+    h1{
+        font-size:32px
+    }
+    h4{
+        margin-top: 10px;
+    }
+    p{
+        margin-top: 10px;
+    }
+`
+const Review = styled.div`
+    color: #f02d34;
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    p{
+        color: #324d67;
+        margin-top: 0px;
+    }
+`
+const Price = styled.p`
+    font-weight: 700 ;
+    font-size: 26px;
+    margin-top: 30px;
+    color:#f02d34;
+`
+
+const Quantity = styled.div`
+    display: flex;
+    gap: 20px;
+    margin-top: 10px ;
+    align-items: center;
+`
+
+const Minus = styled.span`
+    border-right: 1px solid gray;
+    color: #f02d34;
+`
+const Num = styled.span`
+    border-right: 1px solid gray;
+    font-size: 20px;
+`
+const Plus = styled.span`
+    color: rgb(49, 168, 49);
+`
+
+const QuantityDesc = styled.p`
+    border: 1px solid gray;
+    padding: 6px;
+`
+const Buttons = styled.div`
+    display: flex;
+    gap: 30px;
+`
+const AddToCart = styled.button`
+    padding: 10px 20px;
+    border: 1px solid #f02d34 ;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: white;
+    color: #f02d34;
+    cursor: pointer;
+    width: 200px;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+    &:hover{
+        transform:scale(1.1,1.1)
+    }
+    @media screen and (max-width:800px){
+        width: 150px;
+    }
+`
+const BuyNow = styled.button`
+    width: 200px;
+    padding: 10px 20px;
+    background-color: #f02d34;
+    color: white;
+    border: none;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+
+    @media screen and (max-width:800px){
+        width: 150px;
+    }
+
+    &:hover{
+        transform:scale(1.1,1.1)
+    }
+`
+const MaylikeProductsWrapper = styled.div`
+    margin-top: 120px;
+
+    h2{
+        text-align: center;
+        margin: 50px;
+        color: #324d67;
+        font-size: 28px;
+    }
+`
+const MaylikeProductsContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+
+    .track{
+        position: absolute;
+        white-space: nowrap;
+        will-change: transform;
+        animation: marquee 15s linear infinite;
+        width: 180%;
+
+        @media screen and (max-width:800px){
+            animation: marquee 10s linear infinite;
+            width: 550%;
+        }
+        &:hover{
+            animation-play-state: paused;
+        }
+    }
+`
+const Marquee = styled.div`
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow-x: hidden;
+    @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+`
+
 
 
 const ProductDetails = ({product,products}) => {
@@ -18,18 +206,18 @@ const ProductDetails = ({product,products}) => {
     }
     return (
         <div>
-            <div className="product-detail-container">
+            <ProductDetailContainer>
                <div>
-                    <div className="image-container">
-                        <img className="product-detail-image" src={urlFor(image && image[index])}/>
-                    </div>
-                    <div className="small-image-container">
-                        {image?.map((item,i) => (<img src={urlFor(item)} className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=>setIndex(i)}/>))}
-                    </div>
+                    <ImgContainer>
+                        <ProductDetailImg src={urlFor(image && image[index])}/>
+                    </ImgContainer>
+                    <SmallImgContainer>
+                        {image?.map((item,i) => (<img key={i} src={urlFor(item)} className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=>setIndex(i)}/>))}
+                    </SmallImgContainer>
                </div>
-                <div className="product-detail-desc">
+                <ProductDetailDesc>
                     <h1>{name}</h1>
-                    <div className="reviews">
+                    <Review>
                         <div>
                             <AiFillStar/>
                             <AiFillStar/>
@@ -40,38 +228,38 @@ const ProductDetails = ({product,products}) => {
                         <p>
                             (20)
                         </p>
-                    </div>
+                    </Review>
                     <h4>상세설명 : </h4>
                     <p>{details}</p>
-                    <p className="price">{Numeral(price).format(0,0)}원</p>
-                    <div className="quantity">
+                    <Price>{Numeral(price).format(0,0)}원</Price>
+                    <Quantity>
                         <h3>수량:</h3>
-                        <p className="quantity-desc">
-                            <span className="minus" onClick={decQty}>
+                        <QuantityDesc>
+                            <Minus onClick={decQty}>
                                 <AiOutlineMinus/>
-                            </span>
-                            <span className="num" onClick="">
+                            </Minus>
+                            <Num onClick="">
                                 {qty}
-                            </span>
-                            <span className="plus" onClick={incQty}>
+                            </Num>
+                            <Plus onClick={incQty}>
                                 <AiOutlinePlus/>
-                            </span>
-                        </p>
-                    </div>
-                    <div className="buttons">
-                        <button type="button" className="add-to-cart" onClick={()=>onAdd(product,qty)}>장바구니에 담기</button>
-                        <button type="button" className="buy-now" onClick={handleBuyNow}>구매하기</button>
-                    </div>
-                </div>
-            </div>
-            <div className="maylike-products-wrapper">
+                            </Plus>
+                        </QuantityDesc>
+                    </Quantity>
+                    <Buttons>
+                        <AddToCart type="button" onClick={()=>onAdd(product,qty)}>장바구니에 담기</AddToCart>
+                        <BuyNow type="button" onClick={handleBuyNow}>구매하기</BuyNow>
+                    </Buttons>
+                </ProductDetailDesc>
+            </ProductDetailContainer>
+            <MaylikeProductsWrapper>
                 <h2>다른 고객이 함께 구매한 상품</h2>
-                <div className="marquee">
-                    <div className="maylike-products-container track">
+                <Marquee>
+                    <MaylikeProductsContainer className="track">
                         {products.map(item=><Product key={item._id} product={item}/>)}
-                    </div>
-                </div>
-            </div>
+                    </MaylikeProductsContainer>
+                </Marquee>
+            </MaylikeProductsWrapper>
         </div>
     );
 };

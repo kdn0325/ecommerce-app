@@ -3,15 +3,17 @@ import Stripe from 'stripe';
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
+  //POST 메소드 전달
   if (req.method === 'POST') {
     try {
       const params = {
+        //결제 폼
         submit_type: 'pay',
         mode: 'payment',
         payment_method_types: ['card'],
         billing_address_collection: 'auto',
         shipping_options: [
-          //stripe 키
+          //stripe.js 개인 키
           { shipping_rate: 'shr_1LD2mgAt1XOPMalyIEIVC46Y' },
         ],
         line_items: req.body.map((item) => {
@@ -20,12 +22,14 @@ export default async function handler(req, res) {
           const newImage = img.replace('image-','https://cdn.sanity.io/images/ijkppnuo/production/').replace('-webp', '.webp');
 
           return {
-            price_data: { 
+            price_data: {
+              //원화 계산
               currency: 'krw',
               product_data: { 
                 name: item.name,
                 images: [newImage],
               },
+              //결제 상품 가격 반환
               unit_amount: item.price,
             },
             adjustable_quantity: {
