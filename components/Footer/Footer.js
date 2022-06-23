@@ -23,7 +23,7 @@ const FooterContainer = styled.div `
 const Footer = () => {
     return (
         <FooterContainer>
-            <p>2022 Abel's Store All rights reserverd</p>
+            <p>2022 Abel Store All rights reserverd</p>
             <p className="icons">
                 <AiFillInstagram/>
                 <AiOutlineTwitter/>
