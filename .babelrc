@@ -1,6 +1,15 @@
 {
-    "presets": ["next/babel"],
+    "presets": [
+        "next/babel"
+    ],
     "plugins": [
-        ["styled-components", { "ssr": true} ]
+        [
+            "babel-plugin-styled-components",
+            {
+                "fileName": true,
+                "displayName": true,
+                "pure": true
+            }
+        ]
     ]
 }
