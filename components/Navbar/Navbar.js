@@ -59,7 +59,9 @@ const Navbar = () => {
     return (
         <NavContainer>
             <Logo>
-                <Link href="/"><img alt="abel-portfolio" src="https://user-images.githubusercontent.com/91298955/161248419-bc807d7e-f379-4f2e-95c4-d31f71cb4727.png"/></Link>
+                <Link href="/">
+                    <h1><img alt="abel-portfolio" src="https://user-images.githubusercontent.com/91298955/161248419-bc807d7e-f379-4f2e-95c4-d31f71cb4727.png"/></h1>
+                </Link>
             </Logo>
             <CartIcon type="button"  onClick={()=> setShowCart(true)}>
                 <AiOutlineShopping/>
