@@ -19,6 +19,9 @@ node_modules
 .DS_Store
 *.pem
 
+# API KEY
+.env
+
 # debug
 npm-debug.log*
 yarn-debug.log*
