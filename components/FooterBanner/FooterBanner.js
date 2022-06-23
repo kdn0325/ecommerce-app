@@ -9,8 +9,8 @@ const FooterBannerContainer = styled.div`
     border-radius: 15px;
     position: relative;
     height: 400px;
-    line-height: 1; 
-    color: white;
+    line-height: 1;
+    color: #fff;
     width: 100%;
     margin-top: 120px;
 

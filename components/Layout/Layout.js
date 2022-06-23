@@ -18,7 +18,7 @@ const Layout = ({children}) => {
         <LayoutDiv>
             {/* next에서 head태그 사용  */}
             <Head>
-                <title>Store</title>
+                <title>Abel's Store</title>
             </Head>
             <header>
                 <Navbar/>

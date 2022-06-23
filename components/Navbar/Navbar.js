@@ -15,6 +15,17 @@ const NavContainer = styled.div`
 const Logo = styled.p`
     color: gray;
     font-size: 18px;
+    text-align: center;
+    transition: transform .4s ease;
+    &:hover{
+        transform: scale(1.1,1.1);
+    }
+        img{
+                width: 50%;
+                @media screen and (max-width:800px){
+                    width: 30%;
+                }
+        }
 ` 
 
 const CartIcon = styled.button`
@@ -48,7 +59,7 @@ const Navbar = () => {
     return (
         <NavContainer>
             <Logo>
-                <Link href="/">Abel's Store</Link>
+                <Link href="/"><img alt="abel-portfolio" src="https://user-images.githubusercontent.com/91298955/161248419-bc807d7e-f379-4f2e-95c4-d31f71cb4727.png"/></Link>
             </Logo>
             <CartIcon type="button"  onClick={()=> setShowCart(true)}>
                 <AiOutlineShopping/>

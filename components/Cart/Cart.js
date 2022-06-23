@@ -19,12 +19,12 @@ const CartWrapper = styled.div`
     transition: all 1s ease-in-out;
 `
 const CartContainer = styled.div`
+    position: relative;
     height: 100vh;
     width: 600px;
     background-color: #fff;
     float: right;
     padding: 40px 10px;
-    position: relative;
 
     @media screen and (max-width:800px){
         width: 415px;
@@ -82,7 +82,7 @@ const Product = styled.div`
     }
 `
 const CartProductImg = styled.img`
-    width:180px ;
+    width: 180px;
     height: 150px;
     border-radius: 15px;
     background-color: #ebebeb;
@@ -92,9 +92,7 @@ const CartProductImg = styled.img`
             height: 25%;
     }
 `
-const ItemDesc = styled.div`
-
-    .flex{
+const ItemDesc = styled.div`        
         @media screen and (max-width:800px){
             width: 200px;
         }
@@ -116,45 +114,29 @@ const ItemDesc = styled.div`
                 color: black;
             }
         }
-    }
 `
-const ItemDescFlex = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 350px;
-    color: #324d67;
-    .top{
-        padding: 100px 40px;
-        background-color: #f02d34;
-        border-radius: 15px;
-        position: relative;
-        height: 400px;
-        line-height: 1; 
-        color: white;
-        width: 100%;
-        margin-top: 120px;
+const ItemDescFlexTop = styled.div`
+        display: flex;
+        justify-content: space-between;
+        width: 350px;
+        color: #324d67;
 
         @media screen and (max-width:800px){
             flex-wrap: wrap;
             gap: 10px;
         }
-
-    }
-    .bottom{
-        padding: 100px 40px;
-        background-color: #f02d34;
-        border-radius: 15px;
-        position: relative;
-        height: 400px;
-        line-height: 1; 
-        color: white;
-        width: 100%;
-        margin-top: 120px;
+`
+const ItemDescFlexBottom = styled.div`
+        display: flex;
+        justify-content: space-between;
+        width: 350px;
+        color: #324d67;
+        margin-top: 60px;
 
         @media screen and (max-width:800px){
-            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-    }
 `
 
 const Quantity = styled.p`
@@ -164,13 +146,21 @@ const Quantity = styled.p`
 const Minus = styled.span`
     border-right: 1px solid gray;
     color: #f02d34;
+    font-size: 16px;
+    padding: 6px 12px;
+    cursor: pointer;
 `
 const Num = styled.span`
     border-right: 1px solid gray;
     font-size: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
 `
 const Plus = styled.span`
     color: rgb(49, 168, 49);
+    font-size: 16px;
+    padding: 6px 12px;
+    cursor: pointer;
 `
 
 
@@ -182,11 +172,8 @@ const RemoveItem = styled.button`
     border: none;
 `
 const CartBottom = styled.div`
-    position: absolute;
-    bottom: 12px;
-    right: 5px;
-    width: 100%;
     padding: 30px 65px;
+}
 
     @media screen and (max-width:800px){
         padding: 30px;
@@ -206,15 +193,13 @@ const Total = styled.div`
 const BtnContainer = styled.div`
     width: 400px;
     margin: auto;
-    text-align:center;
 
     @media screen and (max-width:800px){
         width: 300px;
         margin: auto;
     }
 `
-const Button = styled.button`
-
+const CartButton = styled.button`
     width: 100%;
     max-width: 400px;
     padding: 10px 12px;
@@ -260,7 +245,7 @@ const Cart = () => {
     return (
         <CartWrapper ref={cartRef}>
             <CartContainer>
-                <CartHeader type="button" onClick={()=>setShowCart(false)}>
+                <CartHeader onClick={()=>setShowCart(false)}>
                     <AiOutlineLeft/>
                     <Heading>장바구니</Heading>
                     <ItemCart>({totalQuantities} items)</ItemCart>
@@ -270,9 +255,9 @@ const Cart = () => {
                         <AiOutlineShopping size={150}/>
                         <h3>장바구니가 비어있습니다</h3>
                         <Link href="/">
-                            <Button className="btn" onClick={()=>setShowCart(false)}>
+                            <CartButton onClick={()=>setShowCart(false)}>
                                쇼핑 하기 
-                            </Button>
+                            </CartButton>
                         </Link>
                     </EmptyCart>
                 )}
@@ -281,11 +266,11 @@ const Cart = () => {
                         <Product key={item._id}>
                             <CartProductImg src={urlFor(item?.image[0])}/>
                             <ItemDesc>
-                                <ItemDescFlex className="top">
+                                <ItemDescFlexTop>
                                     <h5>{item.name}</h5>
                                     <h4>{Numeral(item.price).format(0,0)}원</h4>
-                                </ItemDescFlex>
-                                <ItemDescFlex className="bottom">
+                                </ItemDescFlexTop>
+                                <ItemDescFlexBottom>
                                     <div>
                                     <Quantity>
                                         <Minus onClick={()=>toggleCartItemQuanitity(item._id,"dec")}>
@@ -299,10 +284,10 @@ const Cart = () => {
                                         </Plus>
                                     </Quantity>
                                     </div>
-                                    <RemoveItem type="button" onClick={()=>onRemove(item)}>
+                                    <RemoveItem onClick={()=>onRemove(item)}>
                                         <TiDeleteOutline/>
                                     </RemoveItem>
-                                </ItemDescFlex>
+                                </ItemDescFlexBottom>
                             </ItemDesc>
                         </Product>
                     ))}
@@ -314,9 +299,9 @@ const Cart = () => {
                             <h3>{Numeral(totalPrice).format(0,0)}원</h3>
                         </Total>
                         <BtnContainer>
-                            <Button type="button" onClick={handleCheckOut}>
+                            <CartButton onClick={handleCheckOut}>
                                 구매하기
-                            </Button>
+                            </CartButton>
                         </BtnContainer>
                     </CartBottom>
                 )}

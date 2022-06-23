@@ -4,7 +4,7 @@ import { AiOutlineMinus , AiOutlinePlus , AiFillStar , AiOutlineStar } from 'rea
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 import Numeral from "numeral"
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const ProductDetailContainer = styled.div`
     display: flex;
@@ -92,13 +92,21 @@ const Quantity = styled.div`
 const Minus = styled.span`
     border-right: 1px solid gray;
     color: #f02d34;
+    font-size: 16px;
+    padding: 6px 12px;
+    cursor: pointer;
 `
 const Num = styled.span`
     border-right: 1px solid gray;
     font-size: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
 `
 const Plus = styled.span`
     color: rgb(49, 168, 49);
+    font-size: 16px;
+    padding: 6px 12px;
+    cursor: pointer;
 `
 
 const QuantityDesc = styled.p`
@@ -159,39 +167,37 @@ const MaylikeProductsWrapper = styled.div`
         font-size: 28px;
     }
 `
+const MarqueeAni = keyframes`
+    {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    } 
+`
 const MaylikeProductsContainer = styled.div`
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
-
-    .track{
-        position: absolute;
+    position: absolute;
         white-space: nowrap;
         will-change: transform;
-        animation: marquee 15s linear infinite;
+        animation: ${MarqueeAni} 15s linear infinite;
         width: 180%;
 
         @media screen and (max-width:800px){
-            animation: marquee 10s linear infinite;
+            animation: ${MarqueeAni} 10s linear infinite;
             width: 550%;
         }
         &:hover{
             animation-play-state: paused;
         }
-    }
 `
 const Marquee = styled.div`
     position: relative;
     height: 400px;
     width: 100%;
     overflow-x: hidden;
-    @keyframes marquee {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
-    }
 `
-
 
 
 const ProductDetails = ({product,products}) => {
@@ -255,7 +261,7 @@ const ProductDetails = ({product,products}) => {
             <MaylikeProductsWrapper>
                 <h2>다른 고객이 함께 구매한 상품</h2>
                 <Marquee>
-                    <MaylikeProductsContainer className="track">
+                    <MaylikeProductsContainer>
                         {products.map(item=><Product key={item._id} product={item}/>)}
                     </MaylikeProductsContainer>
                 </Marquee>

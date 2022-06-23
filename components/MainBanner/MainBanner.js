@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { urlFor } from '../../lib/client';
 import styled from 'styled-components';
+import { useStateContext } from '../../context/StateContext';
 
 const MainBannerContainer = styled.div`
     padding: 100px 40px;
@@ -16,7 +17,6 @@ const MainBannerContainer = styled.div`
         height: 560px;
     }
     h1{
-        color: white;
         font-size: 10em;
         margin-left: -20px;
         text-transform: uppercase;
@@ -109,7 +109,7 @@ const MainBanner = ({mainBanner}) => {
                 <MainBannerImg src={urlFor(mainBanner.image)} alt="headphones"/>
                 <div>
                     <Link href={`/product/${mainBanner.product}`}>
-                        <MainBannerButton type="button">{mainBanner.buttonText}</MainBannerButton>
+                        <MainBannerButton type="button" onClick="">{mainBanner.buttonText}</MainBannerButton>
                     </Link>
                     <MainBannerDesc>
                         <h5>상세 설명</h5>
