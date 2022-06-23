@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useStateContext } from '../context/StateContext';
 import { BsBagCheckFill } from "react-icons/bs";
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { runFireworks } from '../lib/utility';
 import styled from 'styled-components';
 
@@ -91,7 +90,6 @@ const Button = styled.button`
 `
 const success = () => {
     const {setCartItems,setTotalPrice,setTotalQuantities} = useStateContext();
-    const [order,setOrder] = useState(null);
     
     useEffect(()=>{
         localStorage.clear();

@@ -218,7 +218,7 @@ const ProductDetails = ({product,products}) => {
                         <ProductDetailImg src={urlFor(image && image[index])}/>
                     </ImgContainer>
                     <SmallImgContainer>
-                        {image?.map((item,i) => (<img key={i} src={urlFor(item)} className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=>setIndex(i)}/>))}
+                        {image?.map((item,i) => (<img key={i} src={urlFor(item)} alt="image" className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=>setIndex(i)}/>))}
                     </SmallImgContainer>
                </div>
                 <ProductDetailDesc>
