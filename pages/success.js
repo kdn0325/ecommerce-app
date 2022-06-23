@@ -88,7 +88,7 @@ const Button = styled.button`
         transform: scale(1.1,1.1);
     }
 `
-const success = () => {
+const Success = () => {
     const {setCartItems,setTotalPrice,setTotalQuantities} = useStateContext();
     
     useEffect(()=>{
@@ -122,4 +122,4 @@ const success = () => {
     );
 };
 
-export default success;
+export default Success;
