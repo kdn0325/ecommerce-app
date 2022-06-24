@@ -2,7 +2,18 @@ import React from 'react';
 import { client } from '../lib/client';
 import { Product ,FooterBanner,MainBanner} from '../components';
 import styled from 'styled-components';
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
+SwiperCore.use([Navigation, Pagination, Autoplay])
+
+
+const ProductsBanner = styled.div`
+    /* display: flex; */
+`
 const ProductsHeader = styled.div`
     text-align: center;
     margin: 40px 0px;
@@ -29,7 +40,16 @@ const ProductsContainer = styled.div`
 const Home = ({products,bannerData}) => {
   return (  
     <>
-      <MainBanner mainBanner={bannerData.length && bannerData[0]}/>
+      <ProductsBanner>
+        <Swiper spaceBetween={50} slidesPerView={1} pagination={{ clickable: true }} autoplay={{ delay: 4000 }} loop={true}>
+              {bannerData?.map((mainBanner,i)=>(
+                  <SwiperSlide key={i}>
+                    <MainBanner mainBanner={mainBanner}/>
+                  </SwiperSlide>
+                  ))
+              }
+        </Swiper>
+      </ProductsBanner>
       <ProductsHeader>
         <h2>스토어. 좋아하는 제품을 구입하는 가장 좋은 방법.</h2>
         <p>최신 제품. 따끈따끈한 신제품 이야기.</p>

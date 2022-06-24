@@ -2,9 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { urlFor } from '../../lib/client';
 import styled from 'styled-components';
-import { useStateContext } from '../../context/StateContext';
 
-const MainBannerContainer = styled.div`
+const MainBannerContainer = styled.ul`
     padding: 100px 40px;
     border-radius: 15px;
     position: relative;
@@ -17,17 +16,27 @@ const MainBannerContainer = styled.div`
         height: 560px;
     }
     h1{
-        font-size: 10em;
+        font-size: 5em;
         margin-left: -20px;
         text-transform: uppercase;
+        color: #fff;
+        position: absolute;
+        top:20%;
+        left:10%;
+        z-index:99;
 
         @media screen and (max-width:800px){
             font-size: 50px;
         }
     }
     h3{
-        font-size: 4rem;
+        font-size: 1rem;
         margin-top: 4px;
+        color: #fff;
+        position: absolute;
+        top:45%;
+        left:10%;
+        z-index:99; 
     }
     @media screen and (max-width:800px){
         font-size: 40px;
@@ -36,6 +45,12 @@ const MainBannerContainer = styled.div`
 ` 
 const BeatSolo = styled.p`
     font-size: 20px;
+    color: #fff;
+    position:absolute;
+    top:50%;
+    left:10%;
+    z-index:99;
+    
 ` 
 const MainBannerButton = styled.button`
     border-radius: 15px;
@@ -47,7 +62,10 @@ const MainBannerButton = styled.button`
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    z-index:10000 !important;
+    position:absolute;
+    z-index:10000;
+    top:60%;
+    left:10%;
 
     @media screen and (max-width:800px){
         margin-top: 90px;
@@ -55,11 +73,12 @@ const MainBannerButton = styled.button`
     }
 ` 
 const MainBannerImg = styled.img`
-    position: absolute;
-    top: 0%;
-    right:20%;
-    width: 450px;
-    height: 450px;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index:50;
     @media screen and (max-width:800px){
         width: 77%;
         height: 62%;
@@ -75,7 +94,8 @@ const MainBannerDesc = styled.div`
     line-height: 1.3;
     display: flex;
     flex-direction: column;
-    color: #324d67;   
+    color: #fff;
+    z-index:99;
 
     @media screen and (max-width:800px){
         bottom: 60px;
@@ -88,35 +108,36 @@ const MainBannerDesc = styled.div`
         font-size: 16px;
         /* color: black; */
         align-self: flex-end;
+        color: #fff;
     }
     p{
-        color: #5f5f5f;
+        color: #fff;
         font-weight: 100;
         text-align: end;
     }
 ` 
 
 
-const MainBanner = ({mainBanner}) => {
+const MainBanner = ({mainBanner:{image,product,buttonText,smallText,midText,largeText1,desc}}) => {
     return (
         <MainBannerContainer>
-            <div>
+            <li>
+            <MainBannerImg src={urlFor(image)} alt="image"/>
                 <BeatSolo>
-                    {mainBanner.smallText}
+                    {smallText}
                 </BeatSolo>
-                <h3>{mainBanner.midText}</h3>
-                <h1>{mainBanner.largeText1}</h1>
-                <MainBannerImg src={urlFor(mainBanner.image)} alt="headphones"/>
+                <h3>{midText}</h3>
+                <h1>{largeText1}</h1>
                 <div>
-                    <Link href={`/product/${mainBanner.product}`}>
-                        <MainBannerButton type="button" onClick="">{mainBanner.buttonText}</MainBannerButton>
+                    <Link href={`/product/${product}`}>
+                        <MainBannerButton type="button" onClick="">{buttonText}</MainBannerButton>
                     </Link>
                     <MainBannerDesc>
-                        <h5>상세 설명</h5>
-                        <p>{mainBanner.desc}</p>
+                        <h5>상세 정보</h5>
+                        <p>{desc}</p>
                     </MainBannerDesc>
                 </div>
-            </div>
+            </li>
         </MainBannerContainer>
     );
 };

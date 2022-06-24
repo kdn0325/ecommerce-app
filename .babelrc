@@ -1,13 +1,21 @@
 {
-    "presets": ["@babel/preset-react"],
+    "presets": [
+        "next/babel"
+    ],
     "plugins": [
-      [
-        "styled-components",
-        {
-          "ssr": true,
-          "displayName": true,
-          "preprocess": false
-        }
-      ]
+        [
+            "babel-plugin-styled-components",
+            
+            {
+                 //server-side에서 동작
+                "ssr":true,
+                //구성 요소 이름을 가능한 한 고유하게 만들기 위해
+                "fileName": true,
+                //디버깅하기 쉬운 클래스네임 : 파일을 쉽게 찾도록
+                "displayName": true,
+                //데드 코드 제거
+                "pure": true
+            }
+        ]
     ]
-  }
+}
