@@ -4,12 +4,16 @@ import { urlFor } from '../../lib/client';
 import styled from 'styled-components';
 
 const MainBannerContainer = styled.ul`
-    padding: 100px 40px;
-    border-radius: 15px;
+    /* padding: 100px 40px; */
     position: relative;
-    height: 500px;
+    height: 620px;
     line-height: 0.9; 
     width: 100%;
+    cursor: pointer;
+
+    li{
+        height:100%
+    }
 
     @media screen and (max-width:800px){
         line-height: 1.3;
@@ -42,6 +46,25 @@ const MainBannerContainer = styled.ul`
         font-size: 40px;
         height: 560px;
     }
+`
+
+const MainBannerImg = styled.img`
+    background-color:#000;
+    border-radius:20px;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    z-index:50;
+    opacity:.9;
+    @media screen and (max-width:800px){
+        width: 77%;
+        height: 62%;
+        top: -2%;
+        right: -6%;
+    }
+
 ` 
 const BeatSolo = styled.p`
     font-size: 20px;
@@ -56,7 +79,7 @@ const MainBannerButton = styled.button`
     border-radius: 15px;
     padding: 10px 16px;
     background-color: #f02d34;
-    color: white;
+    color: #fff;
     border: none;
     margin-top: 40px;
     font-size: 18px;
@@ -70,20 +93,6 @@ const MainBannerButton = styled.button`
     @media screen and (max-width:800px){
         margin-top: 90px;
         z-index: 10000;
-    }
-` 
-const MainBannerImg = styled.img`
-    position:absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    z-index:50;
-    @media screen and (max-width:800px){
-        width: 77%;
-        height: 62%;
-        top: -2%;
-        right: -6%;
     }
 ` 
 const MainBannerDesc = styled.div`
@@ -111,34 +120,37 @@ const MainBannerDesc = styled.div`
         color: #fff;
     }
     p{
-        color: #fff;
+        color: #6e6e73;
         font-weight: 100;
         text-align: end;
     }
 ` 
 
 
-const MainBanner = ({mainBanner:{image,product,buttonText,smallText,midText,largeText1,desc}}) => {
+const MainBanner = ({mainBanner}) => {
+    const {image,product,buttonText,smallText,midText,largeText1,desc} = mainBanner;
     return (
-        <MainBannerContainer>
-            <li>
-            <MainBannerImg src={urlFor(image)} alt="image"/>
-                <BeatSolo>
-                    {smallText}
-                </BeatSolo>
-                <h3>{midText}</h3>
-                <h1>{largeText1}</h1>
-                <div>
-                    <Link href={`/product/${product}`}>
-                        <MainBannerButton type="button" onClick="">{buttonText}</MainBannerButton>
-                    </Link>
-                    <MainBannerDesc>
-                        <h5>상세 정보</h5>
-                        <p>{desc}</p>
-                    </MainBannerDesc>
-                </div>
-            </li>
-        </MainBannerContainer>
+        <Link href={`/product/${product}`}>
+            <MainBannerContainer>
+                <li>
+                <MainBannerImg src={urlFor(image)} alt="image"/>
+                    <BeatSolo>
+                        {smallText}
+                    </BeatSolo>
+                    <h3>{midText}</h3>
+                    <h1>{largeText1}</h1>
+                    <div>
+                        <p>
+                            <MainBannerButton type="button" onClick="">{buttonText}</MainBannerButton>
+                        </p>
+                        <MainBannerDesc>
+                            <h5>상세 정보</h5>
+                            <p>{desc}</p>
+                        </MainBannerDesc>
+                    </div>
+                </li>
+            </MainBannerContainer>
+        </Link>
     );
 };
 

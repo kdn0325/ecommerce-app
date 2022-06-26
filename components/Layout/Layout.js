@@ -5,9 +5,15 @@ import Footer from '../Footer/Footer';
 import styled from 'styled-components';
 
 const LayoutDiv = styled.div`
+     
     padding: 10px;
+    header{
+        max-width: 1280px;
+        margin: auto;
+        height:100px;
+    }
     main{
-        max-width: 1400px; 
+        max-width: 1280px;
         margin: auto;
         width: 100%;
     }
@@ -18,7 +24,7 @@ const Layout = ({children}) => {
         <LayoutDiv>
             {/* next에서 head태그 사용  */}
             <Head>
-                <title>Abel Store</title>
+                <title>Abel Shop</title>
             </Head>
             <header>
                 <Navbar/>

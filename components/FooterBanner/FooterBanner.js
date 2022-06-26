@@ -22,16 +22,20 @@ const FooterBannerContainer = styled.div`
 const FooterBannerDesc = styled.div`
     display: flex ;
     justify-content: space-between;
+    position:absolute;
+    z-index:999;
+
     
     @media screen and (max-width:800px){
         flex-wrap: wrap;
-        gap: 20px;
     }
 `
 const DescLeft = styled.div`
+    padding: 3rem 5rem;
     h3{
         font-weight: 900;
-        font-size: 80px;
+
+        font-size: 4rem;
         margin-left: 25px;
         @media screen and (max-width:800px){
 
@@ -52,18 +56,22 @@ const DescLeft = styled.div`
 ` 
 const DescRight = styled.div`
     line-height: 1.4;
+    padding:3rem 5rem;
 
     h3{
         font-weight: 800;
         font-size: 60px;
+        margin-right: 25px;
 
         @media screen and (max-width:800px){
             font-size: 45px;
+            margin-right: 5px;
         }
     }
 
     p{
         font-size: 18px;
+        margin:18px;
         @media screen and (max-width:800px){
             font-size: 18px;
         }
@@ -83,10 +91,11 @@ const FooterBannerButton = styled.button`
 ` 
 const FooterBannerImg = styled.img`
     position: absolute;
-    /* top: -35%;
-    left: 8%; */
-    top: -25%;
-    left: 25%;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    z-index:99;
     @media screen and (max-width:800px){
         width: 77%;
         left: 30%;
@@ -98,6 +107,7 @@ const FooterBannerImg = styled.img`
 const FooterBanner = ({footerBanner:{discount,largeText1,largeText2,saleTime,smallText,midText,desc,product,buttonText,image}}) => {
     return (
         <FooterBannerContainer>
+            <FooterBannerImg src={urlFor(image)}/>
             <FooterBannerDesc>
                 <DescLeft>
                     <p>{discount}</p>
@@ -115,7 +125,6 @@ const FooterBanner = ({footerBanner:{discount,largeText1,largeText2,saleTime,sma
                         </FooterBannerButton>
                     </Link>
                 </DescRight>
-                <FooterBannerImg src={urlFor(image)}/>
             </FooterBannerDesc>
         </FooterBannerContainer>
     );

@@ -9,14 +9,17 @@ import styled from 'styled-components';
 const NavContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items:center;
     margin: 6px 18px;
     position: relative;
+    height:100%;
 ` 
 const Logo = styled.p`
     color: gray;
-    font-size: 18px;
+    font-size: 2rem;
     text-align: center;
     transition: transform .4s ease;
+    
     &:hover{
         transform: scale(1.1,1.1);
     }
@@ -29,7 +32,7 @@ const Logo = styled.p`
 ` 
 
 const CartIcon = styled.button`
-    font-size: 25px;
+    font-size: 2rem;
     color: gray;
     cursor: pointer;
     position: relative;
@@ -63,7 +66,7 @@ const Navbar = () => {
                     <img alt="abel-portfolio" src="https://user-images.githubusercontent.com/91298955/161248419-bc807d7e-f379-4f2e-95c4-d31f71cb4727.png"/>
                 </Link>
             </Logo>
-            <CartIcon type="button"  onClick={()=> setShowCart(true)}>
+            <CartIcon type="button" onClick={()=> setShowCart(true)}>
                 <AiOutlineShopping/>
                 <CartItemQty>{totalQuantities}</CartItemQty>
             </CartIcon>

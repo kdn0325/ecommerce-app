@@ -37,7 +37,6 @@ const CartHeader = styled.button`
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    gap: 2px;
     margin-left: 10px;
     border: none;
     background-color: transparent;
@@ -74,15 +73,15 @@ const CartProductContainer = styled.div`
 `
 const Product = styled.div`
     display: flex;
-    gap: 30px;
     padding: 20px;
+    justify-content:space-between;
 
     @media screen and (max-width:800px){
         padding: 20px 5px;
     }
 `
 const CartProductImg = styled.img`
-    width: 180px;
+    width: 30%;
     height: 150px;
     border-radius: 15px;
     background-color: #ebebeb;
@@ -92,7 +91,9 @@ const CartProductImg = styled.img`
             height: 25%;
     }
 `
-const ItemDesc = styled.div`        
+const ItemDesc = styled.div` 
+
+    width:60%;
         @media screen and (max-width:800px){
             width: 200px;
         }
@@ -100,14 +101,15 @@ const ItemDesc = styled.div`
 
         h5{
             font-size: 24px;
+            color:#222;
 
             @media screen and (max-width:800px){
                 font-size: 16px;
-                color: #324d67;
             }
         }
 
         h4{
+            color:#222;
             font-size: 20px;
             @media screen and (max-width:800px){
                 font-size: 16px;
@@ -123,7 +125,6 @@ const ItemDescFlexTop = styled.div`
 
         @media screen and (max-width:800px){
             flex-wrap: wrap;
-            gap: 10px;
         }
 `
 const ItemDescFlexBottom = styled.div`
@@ -135,7 +136,6 @@ const ItemDescFlexBottom = styled.div`
 
         @media screen and (max-width:800px){
             flex-wrap: wrap;
-            gap: 10px;
         }
 `
 
@@ -144,14 +144,14 @@ const Quantity = styled.p`
     padding: 6px;
 `
 const Minus = styled.span`
-    border-right: 1px solid gray;
+    border-right: 1px solid #e9e9e9;
     color: #f02d34;
     font-size: 16px;
     padding: 6px 12px;
     cursor: pointer;
 `
 const Num = styled.span`
-    border-right: 1px solid gray;
+    border-right: 1px solid #e9e9e9;
     font-size: 20px;
     padding: 6px 12px;
     cursor: pointer;

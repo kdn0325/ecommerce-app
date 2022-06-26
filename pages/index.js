@@ -7,20 +7,27 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { BiSkipPreviousCircle} from 'react-icons/bi';
 
 SwiperCore.use([Navigation, Pagination, Autoplay])
 
 
 const ProductsBanner = styled.div`
-    /* display: flex; */
+    width:1280px;
+    .swiper .swiper-pagination-bullet {
+      background-color: #fff;
+      margin: 0 10px;
+    }
 `
 const ProductsHeader = styled.div`
     text-align: center;
     margin: 40px 0px;
-    color: #324d67;
+    color: #222;
     h2{
       font-size: 40px;
       font-weight: 800;
+      margin:40px 0;
     }
 
     p{
@@ -32,7 +39,6 @@ const ProductsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
     margin-top: 20px;
     width: 100%;
 `
@@ -41,7 +47,7 @@ const Home = ({products,bannerData}) => {
   return (  
     <>
       <ProductsBanner>
-        <Swiper spaceBetween={50} slidesPerView={1} pagination={{ clickable: true }} autoplay={{ delay: 4000 }} loop={true}>
+        <Swiper navigation={true} spaceBetween={50} slidesPerView={1} navigation={true} pagination={{ clickable: true }} autoplay={{ delay: 4000 }} loop={true}>
               {bannerData?.map((mainBanner,i)=>(
                   <SwiperSlide key={i}>
                     <MainBanner mainBanner={mainBanner}/>

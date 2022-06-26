@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         padding: 0;
         margin: 0;
-        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Nanum Gothic', sans-serif;
     };
 `
 

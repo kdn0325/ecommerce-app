@@ -3,7 +3,7 @@ import { AiFillInstagram , AiOutlineTwitter} from 'react-icons/ai';
 import styled from 'styled-components';
 
 const FooterContainer = styled.div `
-    color: #324d67;
+    color: #222;
     text-align: center;
     margin-top: 20px;
     padding: 30px 10px;
@@ -11,19 +11,17 @@ const FooterContainer = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
     justify-content: center;
 
     &.icon{
         font-size: 30px;
         display: flex;
-        gap: 10px;
     }
 `
 const Footer = () => {
     return (
         <FooterContainer>
-            <p>2022 Abel Store All rights reserverd</p>
+            <p>2022 Abel Shop All rights reserverd</p>
             <p className="icons">
                 <AiFillInstagram/>
                 <AiOutlineTwitter/>

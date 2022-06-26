@@ -8,14 +8,17 @@ import styled, { keyframes } from 'styled-components';
 
 const ProductDetailContainer = styled.div`
     display: flex;
-    gap: 40px;
+    justify-content:space-between;
     margin: 60px 40px 40px;
-    color: #324d67;
+    color: #222;
 
     @media screen and (max-width:800px){
         flex-wrap: wrap;
         margin: 20px;
     }
+`
+const ProductLeft = styled.div`
+    width:50%;
 `
 const ProductDetailImg = styled.img`
     border-radius: 15px;
@@ -39,7 +42,6 @@ const ImgContainer = styled.div`
 `
 const SmallImgContainer = styled.div`
     display: flex;
-    gap: 10px;
     margin-top: 20px;
 
     .small-image{
@@ -54,50 +56,51 @@ const SmallImgContainer = styled.div`
     }
 `
 const ProductDetailDesc = styled.div`
+    width:50%;
+    letter-spacing: -0.5px;
+    line-height:150%;
+
+
     h1{
         font-size:32px
     }
     h4{
-        margin-top: 10px;
-    }
-    p{
-        margin-top: 10px;
+        margin: 30px 0;
     }
 `
 const Review = styled.div`
     color: #f02d34;
     margin-top: 10px;
     display: flex;
-    gap: 5px;
     align-items: center;
     p{
         color: #324d67;
         margin-top: 0px;
+        margin: 15px 0;
     }
 `
 const Price = styled.p`
     font-weight: 700 ;
     font-size: 26px;
-    margin-top: 30px;
+    margin: 30px 0;
     color:#f02d34;
 `
 
 const Quantity = styled.div`
     display: flex;
-    gap: 20px;
     margin-top: 10px ;
     align-items: center;
 `
 
 const Minus = styled.span`
-    border-right: 1px solid gray;
+    border-right: 1px solid #e9e9e9;
     color: #f02d34;
     font-size: 16px;
     padding: 6px 12px;
     cursor: pointer;
 `
 const Num = styled.span`
-    border-right: 1px solid gray;
+    border-right: 1px solid #e9e9e9;
     font-size: 20px;
     padding: 6px 12px;
     cursor: pointer;
@@ -115,18 +118,17 @@ const QuantityDesc = styled.p`
 `
 const Buttons = styled.div`
     display: flex;
-    gap: 30px;
 `
 const AddToCart = styled.button`
+    background-color: #222;
     padding: 10px 20px;
-    border: 1px solid #f02d34 ;
+    border: 1px solid #222 ;
     margin-top: 40px;
     font-size: 18px;
     font-weight: 500;
-    background-color: white;
-    color: #f02d34;
+    color: #fff;
     cursor: pointer;
-    width: 200px;
+    width: 220px;
     transform: scale(1, 1);
     transition: transform 0.5s ease;
     &:hover{
@@ -139,10 +141,11 @@ const AddToCart = styled.button`
 const BuyNow = styled.button`
     width: 200px;
     padding: 10px 20px;
-    background-color: #f02d34;
+    background-color: #f7511a;
     color: white;
     border: none;
     margin-top: 40px;
+    margin-left: 10px;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
@@ -176,7 +179,6 @@ const MarqueeAni = keyframes`
 const MaylikeProductsContainer = styled.div`
     display: flex;
     justify-content: center;
-    gap: 15px;
     margin-top: 20px;
     position: absolute;
         white-space: nowrap;
@@ -213,14 +215,14 @@ const ProductDetails = ({product,products}) => {
     return (
         <div>
             <ProductDetailContainer>
-               <div>
+               <ProductLeft>
                     <ImgContainer>
                         <ProductDetailImg src={urlFor(image && image[index])}/>
                     </ImgContainer>
                     <SmallImgContainer>
                         {image?.map((item,i) => (<img key={i} src={urlFor(item)} alt="image" className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=>setIndex(i)}/>))}
                     </SmallImgContainer>
-               </div>
+               </ProductLeft>
                 <ProductDetailDesc>
                     <h1>{name}</h1>
                     <Review>
@@ -235,11 +237,9 @@ const ProductDetails = ({product,products}) => {
                             (20)
                         </p>
                     </Review>
-                    <h4>상세설명 : </h4>
                     <p>{details}</p>
                     <Price>{Numeral(price).format(0,0)}원</Price>
                     <Quantity>
-                        <h3>수량:</h3>
                         <QuantityDesc>
                             <Minus onClick={decQty}>
                                 <AiOutlineMinus/>
@@ -253,7 +253,7 @@ const ProductDetails = ({product,products}) => {
                         </QuantityDesc>
                     </Quantity>
                     <Buttons>
-                        <AddToCart type="button" onClick={()=>onAdd(product,qty)}>장바구니에 담기</AddToCart>
+                        <AddToCart type="button" onClick={()=>onAdd(product,qty)}>장바구니</AddToCart>
                         <BuyNow type="button" onClick={handleBuyNow}>구매하기</BuyNow>
                     </Buttons>
                 </ProductDetailDesc>
