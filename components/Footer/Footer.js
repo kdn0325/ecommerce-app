@@ -27,7 +27,7 @@ const Footer = () => {
     return (
         <FooterContainer>
             <address>
-                Copyright© {date} Abel's Shop. All rights reserved
+                Copyright© {date} Abel Shop. All rights reserved
             </address>
             <p className="icons">
                 <AiFillInstagram/>
