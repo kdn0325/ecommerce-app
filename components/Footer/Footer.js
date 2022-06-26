@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiFillInstagram , AiOutlineTwitter} from 'react-icons/ai';
 import styled from 'styled-components';
 
@@ -12,16 +12,23 @@ const FooterContainer = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 1rem;
 
     &.icon{
-        font-size: 30px;
+        font-size: 1rem;
         display: flex;
     }
 `
 const Footer = () => {
+    const [date,setDate] = useState();
+    useEffect(()=>{
+        setDate(new Date().getFullYear());
+    },[]);
     return (
         <FooterContainer>
-            <p>2022 Abel Shop All rights reserverd</p>
+            <address>
+                Copyright© {date} Abel's Shop. All rights reserved
+            </address>
             <p className="icons">
                 <AiFillInstagram/>
                 <AiOutlineTwitter/>
