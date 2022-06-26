@@ -65,6 +65,7 @@ const Navbar = () => {
         <NavContainer>
             <Logo>
                 <Link href="/">
+                    {/* 이미지 next-config에서 src 불러와야함 수정미완 */}
                     <img alt="abel-portfolio" src="https://user-images.githubusercontent.com/91298955/161248419-bc807d7e-f379-4f2e-95c4-d31f71cb4727.png"/>
                 </Link>
             </Logo>
