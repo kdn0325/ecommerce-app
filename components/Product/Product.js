@@ -48,12 +48,12 @@ const Review = styled.div`
     }
 `
 
-const Product = ({product:{image,name,slug,price,details}}) => {
+const Product = ({product:{image,name,slug,price}}) => {
     return (
         <ProductContainer>
             <Link href={`/product/${slug.current}`}>
                 <ProductCard>
-                    <ProductImg src={urlFor(image && image[0])} width={250} height={250}/>
+                    <ProductImg src={urlFor(image && image[0])} width={250} height={250} alt={name}/>
                     <ProductName>2022 {name}</ProductName> 
                     <ProductPrice>{Numeral(price).format(0,0)}원</ProductPrice>
                     <Review>

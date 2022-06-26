@@ -47,7 +47,7 @@ const Home = ({products,bannerData}) => {
   return (  
     <>
       <ProductsBanner>
-        <Swiper navigation={true} spaceBetween={50} slidesPerView={1} navigation={true} pagination={{ clickable: true }} autoplay={{ delay: 4000 }} loop={true}>
+        <Swiper spaceBetween={50} slidesPerView={1} navigation={true} pagination={{ clickable: true }} autoplay={{ delay: 4000 }} loop={true}>
               {bannerData?.map((mainBanner,i)=>(
                   <SwiperSlide key={i}>
                     <MainBanner mainBanner={mainBanner}/>

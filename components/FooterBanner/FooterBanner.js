@@ -107,7 +107,7 @@ const FooterBannerImg = styled.img`
 const FooterBanner = ({footerBanner:{discount,largeText1,largeText2,saleTime,smallText,midText,desc,product,buttonText,image}}) => {
     return (
         <FooterBannerContainer>
-            <FooterBannerImg src={urlFor(image)}/>
+            <FooterBannerImg src={urlFor(image)} alt={product}/>
             <FooterBannerDesc>
                 <DescLeft>
                     <p>{discount}</p>

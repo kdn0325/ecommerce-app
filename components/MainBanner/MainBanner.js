@@ -133,7 +133,7 @@ const MainBanner = ({mainBanner}) => {
         <Link href={`/product/${product}`}>
             <MainBannerContainer>
                 <li>
-                <MainBannerImg src={urlFor(image)} alt="image"/>
+                <MainBannerImg src={urlFor(image)} alt={product}/>
                     <BeatSolo>
                         {smallText}
                     </BeatSolo>

@@ -217,10 +217,10 @@ const ProductDetails = ({product,products}) => {
             <ProductDetailContainer>
                <ProductLeft>
                     <ImgContainer>
-                        <ProductDetailImg src={urlFor(image && image[index])}/>
+                        <ProductDetailImg src={urlFor(image && image[index])} alt={name}/>
                     </ImgContainer>
                     <SmallImgContainer>
-                        {image?.map((item,i) => (<img key={i} src={urlFor(item)} alt="image" className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=>setIndex(i)}/>))}
+                        {image?.map((item,i) => (<img key={i} src={urlFor(item)} alt={name} className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=>setIndex(i)}/>))}
                     </SmallImgContainer>
                </ProductLeft>
                 <ProductDetailDesc>
