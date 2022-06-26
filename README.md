@@ -1,6 +1,6 @@
 # Ecommerce-App for Desktop & Mobile
 
-- Next.js SSR E-Commerce샵 학습.
+- Next.js 학습.
 
 ##
 
