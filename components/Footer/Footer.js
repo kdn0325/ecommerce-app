@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { AiFillInstagram , AiOutlineTwitter} from 'react-icons/ai';
 import styled from 'styled-components';
 
 const FooterContainer = styled.div `
@@ -29,10 +28,6 @@ const Footer = () => {
             <address>
                 Copyright© {date} Abel Shop. All rights reserved
             </address>
-            <p className="icons">
-                <AiFillInstagram/>
-                <AiOutlineTwitter/>
-            </p>
         </FooterContainer>
     );
 };

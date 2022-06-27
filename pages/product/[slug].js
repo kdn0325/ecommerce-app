@@ -5,7 +5,6 @@ import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 import Numeral from "numeral"
 import styled, { keyframes } from 'styled-components';
-import Image from 'next/image';
 
 const ProductDetailContainer = styled.div`
     display: flex;
@@ -221,7 +220,7 @@ const ProductDetails = ({product,products}) => {
                         <ProductDetailImg src={urlFor(image && image[index])} alt={name}/>
                     </ImgContainer>
                     <SmallImgContainer>
-                        {image?.map((item,i) => (<Image key={i} src={urlFor(item)} alt={name} className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=>setIndex(i)}/>))}
+                        {image?.map((item,i) => (<img key={i} src={urlFor(item)} alt={name} className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=>setIndex(i)}/>))}
                     </SmallImgContainer>
                </ProductLeft>
                 <ProductDetailDesc>
@@ -245,7 +244,7 @@ const ProductDetails = ({product,products}) => {
                             <Minus onClick={decQty}>
                                 <AiOutlineMinus/>
                             </Minus>
-                            <Num onClick="">
+                            <Num>
                                 {qty}
                             </Num>
                             <Plus onClick={incQty}>

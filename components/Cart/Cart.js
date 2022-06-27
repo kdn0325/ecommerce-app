@@ -264,7 +264,7 @@ const Cart = () => {
                 <CartProductContainer>
                     {cartItems.length >= 1 && cartItems.map((item) => (
                         <Product key={item._id}>
-                            <CartProductImg src={urlFor(item?.image[0])}/>
+                            <CartProductImg src={urlFor(item?.image[0])} alt={item.name}/>
                             <ItemDesc>
                                 <ItemDescFlexTop>
                                     <h5>{item.name}</h5>
@@ -276,7 +276,7 @@ const Cart = () => {
                                         <Minus onClick={()=>toggleCartItemQuanitity(item._id,"dec")}>
                                             <AiOutlineMinus/>
                                         </Minus>
-                                        <Num onClick="">
+                                        <Num>
                                             {item.quantity}
                                         </Num>
                                         <Plus onClick={()=>toggleCartItemQuanitity(item._id,"inc")}>

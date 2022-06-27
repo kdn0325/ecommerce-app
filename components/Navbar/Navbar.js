@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {AiOutlineShopping} from "react-icons/ai"
 import { Cart } from "../";
 import { useStateContext } from '../../context/StateContext';
@@ -26,8 +25,7 @@ const Logo = styled.p`
     }
         img{
                 width: 50%;
-                @media screen and (max-width:800px){
-                    width: 30%;
+                @media screen and (max-width:64rem){
                 }
         }
 `

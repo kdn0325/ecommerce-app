@@ -8,12 +8,16 @@ const LayoutDiv = styled.div`
      
     padding: 10px;
     header{
-        max-width: 1280px;
+        max-width: 80rem;
         margin: auto;
-        height:100px;
+        height:50px;
+        padding:1rem 0;
+    @media screen and (max-width:50rem){
+
+        }   
     }
     main{
-        max-width: 1280px;
+        max-width: 80rem;
         margin: auto;
         width: 100%;
     }

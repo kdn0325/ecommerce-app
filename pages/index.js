@@ -8,16 +8,31 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { BiSkipPreviousCircle} from 'react-icons/bi';
 
 SwiperCore.use([Navigation, Pagination, Autoplay])
 
 
 const ProductsBanner = styled.div`
-    width:1280px;
     .swiper .swiper-pagination-bullet {
       background-color: #fff;
       margin: 0 10px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      z-index: 1;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff !important;
+      fill: black !important;
+      stroke: black !important;
+    }
+    .swiper-button-prev {
+      left: 50px;
+    }
+    .swiper-button-next {
+      right: 50px;
     }
 `
 const ProductsHeader = styled.div`
