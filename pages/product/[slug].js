@@ -12,7 +12,7 @@ const ProductDetailContainer = styled.div`
     margin: 60px 40px 40px;
     color: #222;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         flex-wrap: wrap;
         margin: 20px;
     }
@@ -28,7 +28,7 @@ const ProductDetailImg = styled.img`
     cursor: pointer;
     transition: .3s ease-in-out;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         width: 350px;
         height: 350px;
     }
@@ -134,7 +134,7 @@ const AddToCart = styled.button`
     &:hover{
         transform:scale(1.1,1.1)
     }
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         width: 150px;
     }
 `
@@ -152,7 +152,7 @@ const BuyNow = styled.button`
     transform: scale(1, 1);
     transition: transform 0.5s ease;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         width: 150px;
     }
 
@@ -186,7 +186,7 @@ const MaylikeProductsContainer = styled.div`
         animation: ${MarqueeAni} 15s linear infinite;
         width: 180%;
 
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
             animation: ${MarqueeAni} 10s linear infinite;
             width: 550%;
         }

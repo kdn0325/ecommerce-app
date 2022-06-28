@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { client } from '../lib/client';
 import { Product ,FooterBanner,MainBanner} from '../components';
 import styled from 'styled-components';
@@ -8,6 +8,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 SwiperCore.use([Navigation, Pagination, Autoplay])
 
@@ -56,9 +57,30 @@ const ProductsContainer = styled.div`
     justify-content: center;
     margin-top: 20px;
     width: 100%;
+    /* height:500px; */
 `
 
 const Home = ({products,bannerData}) => {
+  const cnt = useRef(0);
+  const [items, setItems] = useState(() => Array.from({ length: 1 }).fill(cnt.current));
+  const [hasMore, setHasMore] = useState(true);
+
+  const fetchMoreData = () => {
+    // a fake async api call like which sends
+    // 20 more records in .5 secs
+    setTimeout(() => {
+      const nextItems = items.concat(
+        Array.from({ length: 1 }).fill(++cnt.current)
+      );
+      setItems(nextItems);
+    }, 500);
+  };
+
+  useEffect(() => {
+    if (items.length >= 1) {
+      setHasMore(false);
+    }
+  }, [items.length]);
   return (  
     <>
       <ProductsBanner>
@@ -76,8 +98,14 @@ const Home = ({products,bannerData}) => {
         <p>최신 제품. 따끈따끈한 신제품 이야기.</p>
       </ProductsHeader>
       <ProductsContainer>
-        {products?.map((product)=><Product key={product._id} product={product}/>)}
-      </ProductsContainer>
+          <InfiniteScroll dataLength={items.length} hasMore={hasMore} next={fetchMoreData}  height={1000} loader={<div>loading...</div>}>
+              {items.map((v,i) =>(
+                <div key={i} style={{display:"flex", flexWrap:"wrap"}}>
+                  {products?.map((product)=><Product key={product._id} product={product}/>)}
+                </div>
+              ))} 
+          </InfiniteScroll>
+        </ProductsContainer>
       <FooterBanner footerBanner={bannerData && bannerData[0]}/>
     </>
   );

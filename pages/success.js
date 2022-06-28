@@ -10,7 +10,7 @@ const SuccessWrapper = styled.div`
     background-color: white;
     min-height: 60vh;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         min-height: 69vh;
     }
 `
@@ -26,7 +26,7 @@ const SuccessContainer = styled.div`
     align-items: center;
     flex-direction: column;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         width: 370px;
         margin-top: 100px;
         padding: 20px;
@@ -40,7 +40,7 @@ const SuccessContainer = styled.div`
         font-size: 40px;
         color:#324d67;
 
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
             font-size: 17px;
         }
     }

@@ -14,7 +14,7 @@ const FooterBannerContainer = styled.div`
     width: 100%;
     margin-top: 120px;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         height: 560px;
         margin-top: 80px;
     }
@@ -26,7 +26,7 @@ const FooterBannerDesc = styled.div`
     z-index:999;
 
     
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         flex-wrap: wrap;
     }
 `
@@ -37,7 +37,7 @@ const DescLeft = styled.div`
 
         font-size: 4rem;
         margin-left: 25px;
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
 
             font-weight: 900;
             font-size: 50px;
@@ -48,7 +48,7 @@ const DescLeft = styled.div`
     p{
         margin:18px;
 
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
             margin:18px;
         }
     }
@@ -63,7 +63,7 @@ const DescRight = styled.div`
         font-size: 60px;
         margin-right: 25px;
 
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
             font-size: 45px;
             margin-right: 5px;
         }
@@ -72,7 +72,7 @@ const DescRight = styled.div`
     p{
         font-size: 18px;
         margin:18px;
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
             font-size: 18px;
         }
     }
@@ -96,7 +96,7 @@ const FooterBannerImg = styled.img`
     top: 0;
     left: 0;
     z-index:99;
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         width: 77%;
         left: 30%;
         top: 6%;

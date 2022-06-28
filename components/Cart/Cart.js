@@ -26,7 +26,7 @@ const CartContainer = styled.div`
     float: right;
     padding: 40px 10px;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         width: 415px;
         padding: 4px;
     }
@@ -41,7 +41,7 @@ const CartHeader = styled.button`
     border: none;
     background-color: transparent;
     
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         margin-top: 35px;
     }
 `
@@ -67,7 +67,7 @@ const CartProductContainer = styled.div`
     max-height: 70vh;
     padding: 20px 10px;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         margin-top: 10px;
     }
 `
@@ -76,7 +76,7 @@ const Product = styled.div`
     padding: 20px;
     justify-content:space-between;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         padding: 20px 5px;
     }
 `
@@ -86,7 +86,7 @@ const CartProductImg = styled.img`
     border-radius: 15px;
     background-color: #ebebeb;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
             width: 25%;
             height: 25%;
     }
@@ -94,7 +94,7 @@ const CartProductImg = styled.img`
 const ItemDesc = styled.div` 
 
     width:60%;
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
             width: 200px;
         }
 
@@ -103,7 +103,7 @@ const ItemDesc = styled.div`
             font-size: 24px;
             color:#222;
 
-            @media screen and (max-width:800px){
+            @media screen and (max-width:64rem){
                 font-size: 16px;
             }
         }
@@ -111,7 +111,7 @@ const ItemDesc = styled.div`
         h4{
             color:#222;
             font-size: 20px;
-            @media screen and (max-width:800px){
+            @media screen and (max-width:64rem){
                 font-size: 16px;
                 color: black;
             }
@@ -123,7 +123,7 @@ const ItemDescFlexTop = styled.div`
         width: 350px;
         color: #324d67;
 
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
             flex-wrap: wrap;
         }
 `
@@ -134,7 +134,7 @@ const ItemDescFlexBottom = styled.div`
         color: #324d67;
         margin-top: 60px;
 
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
             flex-wrap: wrap;
         }
 `
@@ -175,7 +175,7 @@ const CartBottom = styled.div`
     padding: 30px 65px;
 }
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         padding: 30px;
     }
 `
@@ -185,7 +185,7 @@ const Total = styled.div`
 
     h3{
         font-size: 22px;
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
             font-size: 20px;
         }
     }
@@ -194,7 +194,7 @@ const BtnContainer = styled.div`
     width: 400px;
     margin: auto;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         width: 300px;
         margin: auto;
     }

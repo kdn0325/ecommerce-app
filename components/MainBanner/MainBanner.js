@@ -15,7 +15,7 @@ const MainBannerContainer = styled.ul`
         height:100%
     }
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         line-height: 1.3;
         height: 560px;
     }
@@ -29,7 +29,7 @@ const MainBannerContainer = styled.ul`
         left:10%;
         z-index:99;
 
-        @media screen and (max-width:800px){
+        @media screen and (max-width:64rem){
             font-size: 50px;
         }
     }
@@ -42,7 +42,7 @@ const MainBannerContainer = styled.ul`
         left:10%;
         z-index:99; 
     }
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         font-size: 40px;
         height: 560px;
     }
@@ -58,7 +58,7 @@ const MainBannerImg = styled.img`
     height:100%;
     z-index:50;
     opacity:.9;
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         width: 77%;
         height: 62%;
         top: -2%;
@@ -90,7 +90,7 @@ const MainBannerButton = styled.button`
     top:60%;
     left:10%;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         margin-top: 90px;
         z-index: 10000;
     }
@@ -106,7 +106,7 @@ const MainBannerDesc = styled.div`
     color: #fff;
     z-index:99;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width:64rem){
         bottom: 60px;
     }
 
