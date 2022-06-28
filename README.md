@@ -1,10 +1,6 @@
 # Ecommerce-App for Desktop & Mobile
 
-<<<<<<< HEAD
 - Next.js 학습 E-Commerce샵 제작중 .
-=======
-- Next.js 학습.
->>>>>>> fdd85543049569887e85dd4801bb6bc66086d528
 
 ##
 
