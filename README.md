@@ -1,3 +1,5 @@
+
+[![Node.js CI](https://github.com/kdn0325/ecommerce-app/actions/workflows/test.yml/badge.svg)](https://github.com/kdn0325/ecommerce-app/actions/workflows/test.yml)
 # Ecommerce-App for Desktop & Mobile
 
 - Next.js 학습 E-Commerce샵 제작중 .
@@ -21,3 +23,6 @@
 ### Initial Screen
 
 ### Initial Screen
+
+
+
