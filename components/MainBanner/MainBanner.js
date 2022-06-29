@@ -11,14 +11,14 @@ const MainBannerContainer = styled.ul`
     width: 100%;
     cursor: pointer;
 
-    li{
-        height:100%
-    }
-
     @media screen and (max-width:64rem){
         line-height: 1.3;
         height: 560px;
     }
+    li{
+        height:100%
+    }
+
     h1{
         font-size: 5em;
         margin-left: -20px;
@@ -59,10 +59,7 @@ const MainBannerImg = styled.img`
     z-index:50;
     opacity:.9;
     @media screen and (max-width:64rem){
-        width: 77%;
-        height: 62%;
-        top: -2%;
-        right: -6%;
+        width: 100%;
     }
 
 ` 
@@ -107,7 +104,7 @@ const MainBannerDesc = styled.div`
     z-index:99;
 
     @media screen and (max-width:64rem){
-        bottom: 60px;
+        display: none;
     }
 
     h5{
@@ -123,6 +120,10 @@ const MainBannerDesc = styled.div`
         color: #6e6e73;
         font-weight: 100;
         text-align: end;
+
+        @media screen and (max-width:64rem){
+            display:none;
+        }
     }
 ` 
 
@@ -141,7 +142,7 @@ const MainBanner = ({mainBanner}) => {
                     <h1>{largeText1}</h1>
                     <div>
                         <p>
-                            <MainBannerButton type="button" onClick="">{buttonText}</MainBannerButton>
+                            <MainBannerButton type="button">{buttonText}</MainBannerButton>
                         </p>
                         <MainBannerDesc>
                             <h5>상세 정보</h5>

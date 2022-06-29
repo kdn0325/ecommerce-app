@@ -18,8 +18,8 @@ const LayoutDiv = styled.div`
     }
     main{
         max-width: 80rem;
+        padding:0 5rem;
         margin: auto;
-        width: 100%;
     }
 ` 
 

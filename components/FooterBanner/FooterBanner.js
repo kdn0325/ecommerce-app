@@ -4,8 +4,6 @@ import { urlFor } from '../../lib/client';
 import styled from 'styled-components';
 
 const FooterBannerContainer = styled.div`
-    padding: 100px 40px;
-    background-color: #f02d34;
     border-radius: 15px;
     position: relative;
     height: 400px;
@@ -31,32 +29,37 @@ const FooterBannerDesc = styled.div`
     }
 `
 const DescLeft = styled.div`
-    padding: 3rem 5rem;
+    width:50%;
+    @media screen and (max-width:64rem){
+        width:100%;
+        padding:2rem;
+    }
     h3{
         font-weight: 900;
 
-        font-size: 4rem;
-        margin-left: 25px;
+        font-size: 3rem;
+        margin-left: 4rem;
         @media screen and (max-width:64rem){
-
             font-weight: 900;
-            font-size: 50px;
-            margin-left: 5px;
+            font-size: 3rem;
+            margin-left: 2rem;
         }
     }
 
     p{
-        margin:18px;
-
+        margin: 4rem;
         @media screen and (max-width:64rem){
-            margin:18px;
+            
         }
     }
 
 ` 
 const DescRight = styled.div`
     line-height: 1.4;
-    padding:3rem 5rem;
+    width:40%;
+    @media screen and (max-width:64rem){
+            display:none;
+    }
 
     h3{
         font-weight: 800;
@@ -70,22 +73,22 @@ const DescRight = styled.div`
     }
 
     p{
-        font-size: 18px;
-        margin:18px;
+        font-size: 1rem;
+        margin:2rem;
         @media screen and (max-width:64rem){
-            font-size: 18px;
+            font-size: 1rem;
         }
     }
 
 ` 
 const FooterBannerButton = styled.button`
-    border-radius: 15px;
-    padding: 10px 16px;
+    border-radius: 1.5rem;
+    padding: .8rem 1.2rem;
     background-color: white;
     color: red;
     border: none;
-    margin-top: 40px;
-    font-size: 18px;
+    margin: 2rem;
+    font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
 ` 
@@ -96,12 +99,6 @@ const FooterBannerImg = styled.img`
     top: 0;
     left: 0;
     z-index:99;
-    @media screen and (max-width:64rem){
-        width: 77%;
-        left: 30%;
-        top: 6%;
-        height: 56%
-    }
 ` 
 //구조분해 할당
 const FooterBanner = ({footerBanner:{discount,largeText1,largeText2,saleTime,smallText,midText,desc,product,buttonText,image}}) => {
