@@ -21,3 +21,6 @@
 ### Initial Screen
 
 ### Initial Screen
+
+
+[![Node.js CI](https://github.com/kdn0325/ecommerce-app/actions/workflows/test.yml/badge.svg)](https://github.com/kdn0325/ecommerce-app/actions/workflows/test.yml)
