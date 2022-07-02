@@ -9,28 +9,30 @@ import styled, { keyframes } from 'styled-components';
 const ProductDetailContainer = styled.div`
     display: flex;
     justify-content:space-between;
-    margin: 60px 40px 40px;
+    margin: 4rem 2.5rem 2.5rem;
     color: #222;
 
     @media screen and (max-width:64rem){
         flex-wrap: wrap;
-        margin: 20px;
+        margin: 1.2rem;
     }
 `
 const ProductLeft = styled.div`
     width:50%;
+    @media screen and (max-width:37rem){
+        display:flex;
+        flex-direction:row-reverse;
+    }
 `
 const ProductDetailImg = styled.img`
-    border-radius: 15px;
+    border-radius: 1rem;
     background-color: #ebebeb;
-    width: 400px;
-    height: 400px;
+    width: 80%;
     cursor: pointer;
     transition: .3s ease-in-out;
 
     @media screen and (max-width:64rem){
-        width: 350px;
-        height: 350px;
+        height: 12.5rem;
     }
     
     &:hover{
@@ -38,18 +40,36 @@ const ProductDetailImg = styled.img`
     }
 `
 const ImgContainer = styled.div`
+    @media screen and (max-width:37rem){
+        width:100%
+    }  
 
 `
 const SmallImgContainer = styled.div`
     display: flex;
-    margin-top: 20px;
+    margin-top: 1.2rem;
+
+    @media screen and (max-width:64rem){
+       flex-wrap:wrap;
+       margin:0;
+    }
+    @media screen and (max-width:37rem){
+        font-size:.5rem;
+        flex-wrap:wrap;
+        flex-direction:column;
+        width:50%;
+    }  
 
     .small-image{
         border-radius: 8px;
         background-color: #ebebeb;
-        width: 70px;
-        height: 70px;
+        margin-top:1rem;
+        height: 4rem;
         cursor: pointer;
+        @media screen and (max-width:37rem){
+            width: 2rem;
+            height: 2rem;
+        }  
     }
     .selected-image{
         background-color:#f02d34;
@@ -59,13 +79,24 @@ const ProductDetailDesc = styled.div`
     width:50%;
     letter-spacing: -0.5px;
     line-height:150%;
+    @media screen and (max-width:37rem){
+        line-height:100%;
+        width:40%;
+    } 
 
 
     h1{
-        font-size:32px
+        font-size:2rem;
+
+        @media screen and (max-width:37rem){
+            font-size:1rem;
+        }  
     }
     h4{
-        margin: 30px 0;
+        margin: 1.9rem 0;
+        @media screen and (max-width:37rem){
+            font-size:.5rem;
+        }  
     }
 `
 const Review = styled.div`
@@ -76,13 +107,13 @@ const Review = styled.div`
     p{
         color: #324d67;
         margin-top: 0px;
-        margin: 15px 0;
+        margin: 1rem 0;
     }
 `
 const Price = styled.p`
     font-weight: 700 ;
     font-size: 26px;
-    margin: 30px 0;
+    margin: 1.9rem 0;
     color:#f02d34;
 `
 
@@ -101,7 +132,7 @@ const Minus = styled.span`
 `
 const Num = styled.span`
     border-right: 1px solid #e9e9e9;
-    font-size: 20px;
+    font-size: 1.2rem;
     padding: 6px 12px;
     cursor: pointer;
 `
@@ -121,9 +152,9 @@ const Buttons = styled.div`
 `
 const AddToCart = styled.button`
     background-color: #222;
-    padding: 10px 20px;
+    padding: 10px 1.2rem;
     border: 1px solid #222 ;
-    margin-top: 40px;
+    margin-top: 2.5rem;
     font-size: 18px;
     font-weight: 500;
     color: #fff;
@@ -137,14 +168,20 @@ const AddToCart = styled.button`
     @media screen and (max-width:64rem){
         width: 150px;
     }
+    @media screen and (max-width:37rem){
+        width: 4rem;
+        height: 2rem;
+        font-size: .5rem;
+        padding:0;
+    }
 `
 const BuyNow = styled.button`
-    width: 200px;
-    padding: 10px 20px;
+    width: 12.5rem;
+    padding: 10px 1.2rem;
     background-color: #f7511a;
     color: white;
     border: none;
-    margin-top: 40px;
+    margin-top: 2.5rem;
     margin-left: 10px;
     font-size: 18px;
     font-weight: 500;
@@ -152,8 +189,11 @@ const BuyNow = styled.button`
     transform: scale(1, 1);
     transition: transform 0.5s ease;
 
-    @media screen and (max-width:64rem){
-        width: 150px;
+    @media screen and (max-width:37rem){
+        width: 4rem;
+        height: 2rem;
+        font-size: .5rem;
+        padding:0;
     }
 
     &:hover{
@@ -165,7 +205,7 @@ const MaylikeProductsWrapper = styled.div`
 
     h2{
         text-align: center;
-        margin: 50px;
+        margin: 3rem;
         color: #324d67;
         font-size: 28px;
     }
@@ -179,7 +219,7 @@ const MarqueeAni = keyframes`
 const MaylikeProductsContainer = styled.div`
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1.2rem;
     position: absolute;
         white-space: nowrap;
         will-change: transform;
@@ -187,7 +227,7 @@ const MaylikeProductsContainer = styled.div`
         width: 180%;
 
         @media screen and (max-width:64rem){
-            animation: ${MarqueeAni} 10s linear infinite;
+            animation: ${MarqueeAni} 30s linear infinite;
             width: 550%;
         }
         &:hover{
@@ -212,6 +252,17 @@ const ProductDetails = ({product,products}) => {
 
         setShowCart(true);
     }
+    const [limit,setLimit] = useState(50);
+    const toggleEllipsis = (str,limit) =>{
+        return {
+            string:str.slice(0,limit),
+            isShowmore: str.length > limit
+        }
+    };
+
+    const onClickMore = (str) => () =>{
+        setLimit(str.length);
+    };
     return (
         <div>
             <ProductDetailContainer>
@@ -237,7 +288,7 @@ const ProductDetails = ({product,products}) => {
                             (20)
                         </p>
                     </Review>
-                    <p>{details}</p>
+                    <h4>{details}</h4>
                     <Price>{Numeral(price).format(0,0)}원</Price>
                     <Quantity>
                         <QuantityDesc>

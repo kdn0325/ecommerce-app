@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const FooterContainer = styled.div `
     color: #222;
     text-align: center;
-    margin-top: 20px;
-    padding: 30px 10px;
+    margin-top: 1.2rem;
+    padding: 1.9rem 10px;
     font-weight: 700;
     display: flex;
     flex-direction: column;

@@ -31,35 +31,42 @@ const ProductsBanner = styled.div`
       stroke: black !important;
       @media screen and (max-width:64rem){
         display: none;
-    }
+      }
     }
     .swiper-button-prev {
-      left: 50px;
+      left: 3rem;
     }
     .swiper-button-next {
-      right: 50px;
+      right: 3rem;
     }
+    
 `
 const ProductsHeader = styled.div`
     text-align: center;
-    margin: 40px 0px;
+    margin: 2.5rem 0px;
     color: #222;
     h2{
-      font-size: 40px;
+      font-size: 2.5rem;
       font-weight: 800;
-      margin:40px 0;
+      margin:2.5rem 0;
+      @media screen and (max-width:37rem){
+        font-size: 1.5rem;
+      }
     }
 
     p{
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 200;
+      @media screen and (max-width:37rem){
+        font-size: .8rem;
+      }
     }
 `
 const ProductsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1.2rem;
     width: 100%;
 `
 const Load = styled.div`

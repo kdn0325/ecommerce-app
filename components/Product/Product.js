@@ -22,7 +22,7 @@ const ProductCard = styled.div`
     }
 ` 
 const ProductImg = styled.img`
-    border-radius: 15px;
+    border-radius: 1rem;
     background-color: #ebebeb;
     transform: scale(1, 1);
     transition: transform 0.5s ease;

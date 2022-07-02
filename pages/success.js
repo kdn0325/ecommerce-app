@@ -19,8 +19,8 @@ const SuccessContainer = styled.div`
     margin: auto;
     margin-top: 160px;
     background-color: #dcdcdc;
-    padding: 50px;
-    border-radius: 15px;
+    padding: 3rem;
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,15 +29,15 @@ const SuccessContainer = styled.div`
     @media screen and (max-width:64rem){
         width: 370px;
         margin-top: 100px;
-        padding: 20px;
+        padding: 1.2rem;
         height: 350px;
     }
 
     h2{
         text-transform: capitalize;
-        margin-top: 15px 0px;
+        margin-top: 1rem 0px;
         font-weight: 900;
-        font-size: 40px;
+        font-size: 2.5rem;
         color:#324d67;
 
         @media screen and (max-width:64rem){
@@ -46,7 +46,7 @@ const SuccessContainer = styled.div`
     }
     .icon{
         color: green;
-        font-size: 40px;
+        font-size: 2.5rem;
     }
 `
 const EmailMsg = styled.p`
@@ -60,7 +60,7 @@ const Description = styled.p`
     font-weight: 600;
     text-align: center;
     margin: 10px;
-    margin-top: 30px;
+    margin-top: 1.9rem;
 
     .email{
         margin-left: 5px;
@@ -72,11 +72,11 @@ const Button = styled.button`
     width: 100%;
     max-width: 400px;
     padding: 10px 12px;
-    border-radius: 15px;
+    border-radius: 1rem;
     border: none;
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-top: 10px;
-    margin-top: 40px;
+    margin-top: 2.5rem;
     text-transform: uppercase;
     background-color: #f02d34;
     color: #fff;

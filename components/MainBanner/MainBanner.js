@@ -4,16 +4,15 @@ import { urlFor } from '../../lib/client';
 import styled from 'styled-components';
 
 const MainBannerContainer = styled.ul`
-    /* padding: 100px 40px; */
     position: relative;
-    height: 620px;
+    height: 39rem;
     line-height: 0.9; 
     width: 100%;
     cursor: pointer;
 
     @media screen and (max-width:64rem){
         line-height: 1.3;
-        height: 560px;
+        height: 35rem;
     }
     li{
         height:100%
@@ -21,7 +20,7 @@ const MainBannerContainer = styled.ul`
 
     h1{
         font-size: 5em;
-        margin-left: -20px;
+        margin-left: -1.2rem;
         text-transform: uppercase;
         color: #fff;
         position: absolute;
@@ -30,7 +29,10 @@ const MainBannerContainer = styled.ul`
         z-index:99;
 
         @media screen and (max-width:64rem){
-            font-size: 50px;
+            font-size: 3rem;
+        }
+        @media screen and (max-width:37rem){
+            font-size: 2rem;
         }
     }
     h3{
@@ -40,17 +42,23 @@ const MainBannerContainer = styled.ul`
         position: absolute;
         top:45%;
         left:10%;
-        z-index:99; 
+        z-index:99;
+        @media screen and (max-width:37rem){
+            display:none;
+        }
     }
     @media screen and (max-width:64rem){
-        font-size: 40px;
-        height: 560px;
+        font-size: 2.5rem;
+        height: 35rem;
+    }
+    @media screen and (max-width:37rem){
+        height: 20rem;
     }
 `
 
 const MainBannerImg = styled.img`
     background-color:#000;
-    border-radius:20px;
+    border-radius:1.2rem;
     position:absolute;
     top:0;
     left:0;
@@ -58,13 +66,13 @@ const MainBannerImg = styled.img`
     height:100%;
     z-index:50;
     opacity:.9;
-    @media screen and (max-width:64rem){
-        width: 100%;
+    @media screen and (max-width:37rem){
+
     }
 
 ` 
 const BeatSolo = styled.p`
-    font-size: 20px;
+    font-size: 1.2rem;
     color: #fff;
     position:absolute;
     top:50%;
@@ -73,12 +81,12 @@ const BeatSolo = styled.p`
     
 ` 
 const MainBannerButton = styled.button`
-    border-radius: 15px;
+    border-radius: 1rem;
     padding: 10px 16px;
     background-color: #f02d34;
     color: #fff;
     border: none;
-    margin-top: 40px;
+    margin-top: 2.5rem;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
@@ -90,6 +98,9 @@ const MainBannerButton = styled.button`
     @media screen and (max-width:64rem){
         margin-top: 90px;
         z-index: 10000;
+    }
+    @media screen and (max-width:37rem){
+        margin-top: 3rem;
     }
 ` 
 const MainBannerDesc = styled.div`
@@ -115,6 +126,9 @@ const MainBannerDesc = styled.div`
         /* color: black; */
         align-self: flex-end;
         color: #fff;
+        @media screen and (max-width:37rem){
+            display:none;
+        }
     }
     p{
         color: #6e6e73;

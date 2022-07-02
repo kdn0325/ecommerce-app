@@ -5,20 +5,29 @@ import Footer from '../Footer/Footer';
 import styled from 'styled-components';
 
 const LayoutDiv = styled.div`
-     
-    padding: 10px;
+    max-width: 80rem;
+    margin: auto;
+    padding:0 5rem;
+
+    @media screen and (max-width:37rem){
+        max-width: 100%;
+        padding:0 .2rem;
+    }   
     header{
-        max-width: 80rem;
+        width:100%;
         margin: auto;
-        height:50px;
         padding:1rem 0;
-    @media screen and (max-width:50rem){
+
+    @media screen and (max-width:64rem){
 
         }   
     }
+    @media screen and (max-width:37rem){
+        width:100%;
+        
+    }
     main{
-        max-width: 80rem;
-        padding:0 5rem;
+        
         margin: auto;
     }
 ` 

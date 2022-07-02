@@ -24,7 +24,7 @@ const CartContainer = styled.div`
     width: 600px;
     background-color: #fff;
     float: right;
-    padding: 40px 10px;
+    padding: 2.5rem 10px;
 
     @media screen and (max-width:64rem){
         width: 415px;
@@ -53,19 +53,19 @@ const ItemCart = styled.span`
     color: #f02d34;
 `
 const EmptyCart = styled.div`
-    margin:40px;
+    margin:2.5rem;
     text-align:center;
 
     h3{
         font-weight: 600;
-        font-size: 20px;
+        font-size: 1.2rem;
     }
 `
 const CartProductContainer = styled.div`
-    margin-top: 15px;
+    margin-top: 1rem;
     overflow: auto;
     max-height: 70vh;
-    padding: 20px 10px;
+    padding: 1.2rem 10px;
 
     @media screen and (max-width:64rem){
         margin-top: 10px;
@@ -73,17 +73,17 @@ const CartProductContainer = styled.div`
 `
 const Product = styled.div`
     display: flex;
-    padding: 20px;
+    padding: 1.2rem;
     justify-content:space-between;
 
     @media screen and (max-width:64rem){
-        padding: 20px 5px;
+        padding: 1.2rem 5px;
     }
 `
 const CartProductImg = styled.img`
     width: 30%;
     height: 150px;
-    border-radius: 15px;
+    border-radius: 1rem;
     background-color: #ebebeb;
 
     @media screen and (max-width:64rem){
@@ -110,7 +110,7 @@ const ItemDesc = styled.div`
 
         h4{
             color:#222;
-            font-size: 20px;
+            font-size: 1.2rem;
             @media screen and (max-width:64rem){
                 font-size: 16px;
                 color: black;
@@ -152,7 +152,7 @@ const Minus = styled.span`
 `
 const Num = styled.span`
     border-right: 1px solid #e9e9e9;
-    font-size: 20px;
+    font-size: 1.2rem;
     padding: 6px 12px;
     cursor: pointer;
 `
@@ -172,11 +172,11 @@ const RemoveItem = styled.button`
     border: none;
 `
 const CartBottom = styled.div`
-    padding: 30px 65px;
+    padding: 1.9rem 65px;
 }
 
     @media screen and (max-width:64rem){
-        padding: 30px;
+        padding: 1.9rem;
     }
 `
 const Total = styled.div`
@@ -186,7 +186,7 @@ const Total = styled.div`
     h3{
         font-size: 22px;
         @media screen and (max-width:64rem){
-            font-size: 20px;
+            font-size: 1.2rem;
         }
     }
 `
@@ -203,10 +203,10 @@ const CartButton = styled.button`
     width: 100%;
     max-width: 400px;
     padding: 10px 12px;
-    border-radius: 15px;
+    border-radius: 1rem;
     border: none;
-    font-size: 20px;
-    margin-top: 40px;
+    font-size: 1.2rem;
+    margin-top: 2.5rem;
     text-transform: uppercase;
     background-color: #f02d34;
     color: #fff;

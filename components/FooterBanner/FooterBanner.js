@@ -4,7 +4,7 @@ import { urlFor } from '../../lib/client';
 import styled from 'styled-components';
 
 const FooterBannerContainer = styled.div`
-    border-radius: 15px;
+    border-radius: 1rem;
     position: relative;
     height: 400px;
     line-height: 1;
@@ -13,8 +13,12 @@ const FooterBannerContainer = styled.div`
     margin-top: 120px;
 
     @media screen and (max-width:64rem){
-        height: 560px;
-        margin-top: 80px;
+        height: 35rem;
+        margin-top: 5rem;
+    }
+    @media screen and (max-width:37rem){
+        height: 20rem;
+        margin-top: 3rem;
     }
 `
 const FooterBannerDesc = styled.div`
@@ -34,6 +38,9 @@ const DescLeft = styled.div`
         width:100%;
         padding:2rem;
     }
+    @media screen and (max-width:37rem){
+        padding: 0;
+    }
     h3{
         font-weight: 900;
 
@@ -44,12 +51,16 @@ const DescLeft = styled.div`
             font-size: 3rem;
             margin-left: 2rem;
         }
+        @media screen and (max-width:37rem){
+            font-size: 2rem;
+        }
     }
 
     p{
         margin: 4rem;
-        @media screen and (max-width:64rem){
-            
+
+        @media screen and (max-width:37rem){
+            margin: 2rem;
         }
     }
 
