@@ -5,7 +5,7 @@ const FooterContainer = styled.div `
     color: #222;
     text-align: center;
     margin-top: 1.2rem;
-    padding: 1.9rem 10px;
+    padding: 1.9rem .6rem;
     font-weight: 700;
     display: flex;
     flex-direction: column;

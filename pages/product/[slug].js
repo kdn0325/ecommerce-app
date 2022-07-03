@@ -115,12 +115,20 @@ const Price = styled.p`
     font-size: 2.37rem;
     margin: 1.9rem 0;
     color:#f02d34;
+    @media screen and (max-width:37rem){
+        font-size: 1.5rem;
+    }
 `
 
 const Quantity = styled.div`
     display: flex;
     margin-top: .6rem ;
     align-items: center;
+    span{
+        @media screen and (max-width:37rem){
+            font-size: .6rem;
+        }
+    }
 `
 
 const Minus = styled.span`
@@ -129,6 +137,9 @@ const Minus = styled.span`
     font-size: 1.37rem;
     padding: .37rem .75rem;
     cursor: pointer;
+    @media screen and (max-width:37rem){
+        font-size: .6rem;
+    }
 `
 const Num = styled.span`
     border-right: 1px solid #e9e9e9;

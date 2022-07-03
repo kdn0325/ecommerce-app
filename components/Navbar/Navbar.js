@@ -59,6 +59,9 @@ const CartItemQty = styled.span`
     border-radius: 50%;
     text-align: center;
     font-weight: 600;
+    @media screen and (max-width:64rem){
+        right: -3px;
+    }
 `
 
 const Navbar = () => {
