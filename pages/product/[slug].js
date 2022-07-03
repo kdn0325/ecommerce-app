@@ -36,7 +36,7 @@ const ProductDetailImg = styled.img`
         height: 20rem;
     }
     @media screen and (max-width:37rem){
-        height: 22rem;
+        height: 10rem;
     }
     
     &:hover{
