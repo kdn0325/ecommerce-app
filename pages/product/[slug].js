@@ -30,9 +30,13 @@ const ProductDetailImg = styled.img`
     width: 80%;
     cursor: pointer;
     transition: .3s ease-in-out;
+    height: 22rem;
 
     @media screen and (max-width:64rem){
-        height: 12.5rem;
+        height: 20rem;
+    }
+    @media screen and (max-width:37rem){
+        height: 22rem;
     }
     
     &:hover{
@@ -40,6 +44,7 @@ const ProductDetailImg = styled.img`
     }
 `
 const ImgContainer = styled.div`
+
     @media screen and (max-width:37rem){
         width:100%
     }  
