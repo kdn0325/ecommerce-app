@@ -17,7 +17,7 @@ const ProductsBanner = styled.div`
   width:100%;
     .swiper .swiper-pagination-bullet {
       background-color: #fff;
-      margin: 0 10px;
+      margin: 0 .6rem;
     }
     .swiper-button-prev,
     .swiper-button-next {
@@ -43,7 +43,7 @@ const ProductsBanner = styled.div`
 `
 const ProductsHeader = styled.div`
     text-align: center;
-    margin: 2.5rem 0px;
+    margin: 2.5rem 0;
     color: #222;
     h2{
       font-size: 2.5rem;
@@ -71,13 +71,13 @@ const ProductsContainer = styled.div`
 `
 const Load = styled.div`
     width:100%;
-    padding: 80px 0;
+    padding: 5rem 0;
 `
 const LoadMore = styled.button`
     display: block;
     position: relative;
     width: 100%;
-    height: 60px;
+    height: 3.7rem;
     margin: 0 auto;
     border: 1px solid #222;
     box-shadow: 4px 4px #f8f8f8;

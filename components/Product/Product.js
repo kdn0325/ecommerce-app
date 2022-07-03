@@ -7,7 +7,7 @@ import {AiFillStar , AiOutlineStar } from 'react-icons/ai';
 
 
 const ProductContainer = styled.div`
-    margin-right:10px;
+    margin-right:.6rem;
 
 ` 
 const ProductCard = styled.div`
@@ -34,18 +34,18 @@ const ProductName = styled.p`
 ` 
 const ProductPrice = styled.p`
     font-weight: 800;
-    margin-top: 6px;
+    margin-top: .37rem;
     color: #222;
-    font-size:22px;
+    font-size:1.4rem;
 ` 
 const Review = styled.div`
     color: #222;
-    margin-top: 10px;
+    margin-top: .6rem;
     display: flex;
     align-items: center;
     p{
         color: #324d67;
-        margin-top: 0px;
+        margin-top: 0;
     }
 `
 

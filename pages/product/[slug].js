@@ -61,7 +61,7 @@ const SmallImgContainer = styled.div`
     }  
 
     .small-image{
-        border-radius: 8px;
+        border-radius: .5rem;
         background-color: #ebebeb;
         margin-top:1rem;
         height: 4rem;
@@ -101,72 +101,72 @@ const ProductDetailDesc = styled.div`
 `
 const Review = styled.div`
     color: #f02d34;
-    margin-top: 10px;
+    margin-top: .6rem;
     display: flex;
     align-items: center;
     p{
         color: #324d67;
-        margin-top: 0px;
+        margin-top: 0;
         margin: 1rem 0;
     }
 `
 const Price = styled.p`
     font-weight: 700 ;
-    font-size: 26px;
+    font-size: 2.37rem;
     margin: 1.9rem 0;
     color:#f02d34;
 `
 
 const Quantity = styled.div`
     display: flex;
-    margin-top: 10px ;
+    margin-top: .6rem ;
     align-items: center;
 `
 
 const Minus = styled.span`
     border-right: 1px solid #e9e9e9;
     color: #f02d34;
-    font-size: 16px;
-    padding: 6px 12px;
+    font-size: 1.37rem;
+    padding: .37rem .75rem;
     cursor: pointer;
 `
 const Num = styled.span`
     border-right: 1px solid #e9e9e9;
     font-size: 1.2rem;
-    padding: 6px 12px;
+    padding: .37rem .75rem;
     cursor: pointer;
 `
 const Plus = styled.span`
     color: rgb(49, 168, 49);
-    font-size: 16px;
-    padding: 6px 12px;
+    font-size: 1.37rem;
+    padding: .37rem .75rem;
     cursor: pointer;
 `
 
 const QuantityDesc = styled.p`
     border: 1px solid gray;
-    padding: 6px;
+    padding: .37rem;
 `
 const Buttons = styled.div`
     display: flex;
 `
 const AddToCart = styled.button`
     background-color: #222;
-    padding: 10px 1.2rem;
+    padding: .6rem 1.2rem;
     border: 1px solid #222 ;
     margin-top: 2.5rem;
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: 500;
     color: #fff;
     cursor: pointer;
-    width: 220px;
+    width: 14rem;
     transform: scale(1, 1);
     transition: transform 0.5s ease;
     &:hover{
         transform:scale(1.1,1.1)
     }
     @media screen and (max-width:64rem){
-        width: 150px;
+        width: 9rem;
     }
     @media screen and (max-width:37rem){
         width: 4rem;
@@ -177,13 +177,13 @@ const AddToCart = styled.button`
 `
 const BuyNow = styled.button`
     width: 12.5rem;
-    padding: 10px 1.2rem;
+    padding: .6rem 1.2rem;
     background-color: #f7511a;
     color: white;
     border: none;
     margin-top: 2.5rem;
-    margin-left: 10px;
-    font-size: 18px;
+    margin-left: .6rem;
+    font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
     transform: scale(1, 1);
@@ -201,13 +201,13 @@ const BuyNow = styled.button`
     }
 `
 const MaylikeProductsWrapper = styled.div`
-    margin-top: 120px;
+    margin-top: 7.5rem;
 
     h2{
         text-align: center;
         margin: 3rem;
         color: #324d67;
-        font-size: 28px;
+        font-size: 1.8rem;
     }
 `
 const MarqueeAni = keyframes`
@@ -236,7 +236,7 @@ const MaylikeProductsContainer = styled.div`
 `
 const Marquee = styled.div`
     position: relative;
-    height: 400px;
+    height: 25rem;
     width: 100%;
     overflow-x: hidden;
 `

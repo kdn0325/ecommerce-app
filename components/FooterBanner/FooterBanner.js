@@ -6,11 +6,11 @@ import styled from 'styled-components';
 const FooterBannerContainer = styled.div`
     border-radius: 1rem;
     position: relative;
-    height: 400px;
+    height: 25rem;
     line-height: 1;
     color: #fff;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 7.5rem;
 
     @media screen and (max-width:64rem){
         height: 35rem;
@@ -74,12 +74,12 @@ const DescRight = styled.div`
 
     h3{
         font-weight: 800;
-        font-size: 60px;
-        margin-right: 25px;
+        font-size: 3.7rem;
+        margin-right: 1.5rem;
 
         @media screen and (max-width:64rem){
-            font-size: 45px;
-            margin-right: 5px;
+            font-size: 3rem;
+            margin-right: .3rem;
         }
     }
 

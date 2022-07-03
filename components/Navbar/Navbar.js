@@ -10,7 +10,7 @@ const NavContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items:center;
-    margin: 6px 18px;
+    margin: .37rem 1.1rem;
     position: relative;
     height:100%;
 ` 
@@ -25,8 +25,9 @@ const Logo = styled.p`
     }
         img{
                 width: 50%;
-                @media screen and (max-width:64rem){
-                }
+            @media screen and (max-width:37rem){
+                width: 40%;
+            }
         }
 `
 
@@ -43,15 +44,18 @@ const CartIcon = styled.button`
     &:hover{
         transform: scale(1.1,1.1);
     }
+    @media screen and (max-width:37rem){
+        font-size: 1.5rem;
+    }
 `
 const CartItemQty = styled.span`
     position: absolute;
     right: -8px;
-    font-size: 12px;
+    font-size: .75rem;
     color: #eee;
     background-color: #f02d34;
-    width: 18px;
-    height: 18px;
+    width: 1.1rem;
+    height: 1.1rem;
     border-radius: 50%;
     text-align: center;
     font-weight: 600;

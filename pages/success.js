@@ -15,9 +15,9 @@ const SuccessWrapper = styled.div`
     }
 `
 const SuccessContainer = styled.div`
-    width: 1000px;
+    width: 62rem;
     margin: auto;
-    margin-top: 160px;
+    margin-top: 10rem;
     background-color: #dcdcdc;
     padding: 3rem;
     border-radius: 1rem;
@@ -27,21 +27,21 @@ const SuccessContainer = styled.div`
     flex-direction: column;
 
     @media screen and (max-width:64rem){
-        width: 370px;
-        margin-top: 100px;
+        width: 23rem;
+        margin-top: 6.25rem;
         padding: 1.2rem;
-        height: 350px;
+        height: 22rem;
     }
 
     h2{
         text-transform: capitalize;
-        margin-top: 1rem 0px;
+        margin-top: 1rem 0;
         font-weight: 900;
         font-size: 2.5rem;
         color:#324d67;
 
         @media screen and (max-width:64rem){
-            font-size: 17px;
+            font-size: 1rem;
         }
     }
     .icon{
@@ -50,32 +50,32 @@ const SuccessContainer = styled.div`
     }
 `
 const EmailMsg = styled.p`
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     text-align: center;
 
 `
 const Description = styled.p`
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     text-align: center;
-    margin: 10px;
+    margin: .6rem;
     margin-top: 1.9rem;
 
     .email{
-        margin-left: 5px;
+        margin-left: .3rem;
         color: #f02d34;
     }
 
 `
 const Button = styled.button`
     width: 100%;
-    max-width: 400px;
-    padding: 10px 12px;
+    max-width: 25rem;
+    padding: .6rem .75rem;
     border-radius: 1rem;
     border: none;
     font-size: 1.2rem;
-    margin-top: 10px;
+    margin-top: .6rem;
     margin-top: 2.5rem;
     text-transform: uppercase;
     background-color: #f02d34;

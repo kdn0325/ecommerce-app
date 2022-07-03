@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const MainBannerContainer = styled.ul`
     position: relative;
     height: 39rem;
-    line-height: 0.9; 
+    line-height: 0.9;
     width: 100%;
     cursor: pointer;
 
@@ -14,8 +14,9 @@ const MainBannerContainer = styled.ul`
         line-height: 1.3;
         height: 35rem;
     }
+
     li{
-        height:100%
+        height:100%;
     }
 
     h1{
@@ -37,7 +38,7 @@ const MainBannerContainer = styled.ul`
     }
     h3{
         font-size: 1rem;
-        margin-top: 4px;
+        margin-top: .25rem;
         color: #fff;
         position: absolute;
         top:45%;
@@ -57,6 +58,7 @@ const MainBannerContainer = styled.ul`
 `
 
 const MainBannerImg = styled.img`
+
     background-color:#000;
     border-radius:1.2rem;
     position:absolute;
@@ -82,12 +84,12 @@ const BeatSolo = styled.p`
 ` 
 const MainBannerButton = styled.button`
     border-radius: 1rem;
-    padding: 10px 16px;
+    padding: .6rem 1rem;
     background-color: #f02d34;
     color: #fff;
     border: none;
     margin-top: 2.5rem;
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
     position:absolute;
@@ -96,7 +98,7 @@ const MainBannerButton = styled.button`
     left:10%;
 
     @media screen and (max-width:64rem){
-        margin-top: 90px;
+        margin-top: 5.5rem;
         z-index: 10000;
     }
     @media screen and (max-width:37rem){
@@ -107,7 +109,7 @@ const MainBannerDesc = styled.div`
     position: absolute;
     right: 10%;
     bottom: 5%;
-    width: 300px;
+    width: 19rem;
     line-height: 1.3;
     display: flex;
     flex-direction: column;
@@ -119,10 +121,9 @@ const MainBannerDesc = styled.div`
     }
 
     h5{
-
-        margin-bottom: 12px;
+        margin-bottom: .75rem;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 1rem;
         /* color: black; */
         align-self: flex-end;
         color: #fff;
@@ -140,7 +141,6 @@ const MainBannerDesc = styled.div`
         }
     }
 ` 
-
 
 const MainBanner = ({mainBanner}) => {
     const {image,product,buttonText,smallText,midText,largeText1,desc} = mainBanner;
