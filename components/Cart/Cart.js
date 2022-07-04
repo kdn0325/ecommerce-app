@@ -67,8 +67,9 @@ const EmptyCart = styled.div`
     h3{
         font-weight: 600;
         font-size: 1.2rem;
+
         @media screen and (max-width:37rem){
-            font-size: .8rem;
+            font-size: 1.5rem;
         }
     }
 `
@@ -76,14 +77,6 @@ const CartProductContainer = styled.div`
     margin-top: 1rem;
     padding: 1.2rem .6rem;
     overflow:auto;
-
-    @media screen and (max-width:64rem){
-        
-    }
-    @media screen and (max-width:37rem){
-        /* width: 100%; */
-        /* padding:0; */
-    }
 `
 const Product = styled.div`
     display: flex;
@@ -243,12 +236,20 @@ const CartButton = styled.button`
         transform: scale(1.1,1.1);
     }
     @media screen and (max-width:64rem){
-        font-size: .8rem;
+        font-size: 1rem;
         max-width: 15rem;
     }
     
 `
 const CartIco = styled.p`
+    font-size:2rem;
+
+    @media screen and (max-width:64rem){
+        font-size:4rem;
+    }
+    @media screen and (max-width:37rem){
+        font-size:6rem;
+    }
     
 `
 const Cart = () => {
