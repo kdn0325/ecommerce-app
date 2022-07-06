@@ -14,6 +14,7 @@ const NavContainer = styled.div`
     position: relative;
     height:100%;
 ` 
+
 const Logo = styled.p`
     color: gray;
     font-size: 2rem;
