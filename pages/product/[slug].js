@@ -116,12 +116,12 @@ const Review = styled.div`
     }
 `
 const Price = styled.p`
-    font-weight: 700 ;
-    font-size: 2.37rem;
+    font-weight: 600;
+    font-size: 1.5rem;
     margin: 1.9rem 0;
     color:#f02d34;
     @media screen and (max-width:37rem){
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 `
 
@@ -175,7 +175,7 @@ const AddToCart = styled.button`
     font-weight: 500;
     color: #fff;
     cursor: pointer;
-    width: 14rem;
+    width: 12.5rem;
     transform: scale(1, 1);
     transition: transform 0.5s ease;
     &:hover{
@@ -205,15 +205,17 @@ const BuyNow = styled.button`
     transform: scale(1, 1);
     transition: transform 0.5s ease;
 
+    &:hover{
+        transform:scale(1.1,1.1)
+    }
+    @media screen and (max-width:64rem){
+        width: 9rem;
+    }
     @media screen and (max-width:37rem){
         width: 4rem;
         height: 2rem;
         font-size: .5rem;
         padding:0;
-    }
-
-    &:hover{
-        transform:scale(1.1,1.1)
     }
 `
 const MaylikeProductsWrapper = styled.div`

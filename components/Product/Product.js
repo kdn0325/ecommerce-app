@@ -20,6 +20,15 @@ const ProductCard = styled.div`
     &:hover{
         transform: scale(1.1,1.1)
     }
+    img{
+        width:16rem;
+        height:16rem;
+        @media screen and (max-width:37rem){
+            width:12rem;
+            height:12rem;
+        }
+    }
+    
 ` 
 const ProductImg = styled.img`
     border-radius: 1rem;
@@ -54,7 +63,7 @@ const Product = ({product:{image,name,slug,price}}) => {
         <ProductContainer>
             <Link href={`/product/${slug.current}`}>
                 <ProductCard>
-                    <ProductImg src={urlFor(image && image[0])} width={250} height={250} alt={name}/>
+                    <ProductImg src={urlFor(image && image[0])} alt={name}/>
                     <ProductName>2022 {name}</ProductName> 
                     <ProductPrice>{Numeral(price).format(0,0)}원</ProductPrice>
                     <Review>
