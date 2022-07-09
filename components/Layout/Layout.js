@@ -10,18 +10,14 @@ const LayoutDiv = styled.div`
     padding:0 5rem;
 
     @media screen and (max-width:37rem){
-        max-width: 100%;
+        max-width: 30rem;
         padding:0 .2rem;
     }   
     header{
         width:100%;
         margin: auto;
         padding:1rem 0;
-
-    @media screen and (max-width:64rem){
-
-        }   
-    }
+        
     @media screen and (max-width:37rem){
         width:100%;
         
