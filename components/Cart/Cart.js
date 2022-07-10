@@ -16,7 +16,7 @@ const CartWrapper = styled.div`
     right: 0;
     top: 0;
     z-index: 100;
-    transition: all 1s ease-in-out;
+    transition: all 2s ease-in-out;
 
 `
 const CartContainer = styled.div`

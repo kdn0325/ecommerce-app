@@ -124,15 +124,14 @@ const MainBannerDesc = styled.div`
         margin-bottom: .75rem;
         font-weight: 700;
         font-size: 1rem;
-        /* color: black; */
         align-self: flex-end;
-        color: #fff;
+        color: #f5fffa;
         @media screen and (max-width:37rem){
             display:none;
         }
     }
     p{
-        color: #6e6e73;
+        color: #f0f8ff;
         font-weight: 100;
         text-align: end;
 

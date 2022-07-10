@@ -33,6 +33,10 @@ const ProductsBanner = styled.div`
         display: none;
       }
     }
+    .swiper-button-prev::after,
+    .swiper-button-next::after{
+      font-size:2rem;
+    }
     .swiper-button-prev {
       left: 3rem;
     }
