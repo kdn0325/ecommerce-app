@@ -105,12 +105,12 @@ const ProductDetailDesc = styled.div`
     }
 `
 const Review = styled.div`
-    color: #f02d34;
+    color: #f7511a;
     margin-top: .6rem;
     display: flex;
     align-items: center;
     p{
-        color: #324d67;
+        color: #f02d34;
         margin-top: 0;
         margin: 1rem 0;
     }
@@ -119,7 +119,7 @@ const Price = styled.p`
     font-weight: 600;
     font-size: 1.5rem;
     margin: 1.9rem 0;
-    color:#f02d34;
+    color:#f7511a;
     @media screen and (max-width:37rem){
         font-size: 1rem;
     }
@@ -176,7 +176,7 @@ const AddToCart = styled.button`
     color: #fff;
     cursor: pointer;
     width: 12.5rem;
-    transform: scale(1, 1);
+    transform: scale(1,1);
     transition: transform 0.5s ease;
     &:hover{
         transform:scale(1.1,1.1)
@@ -202,11 +202,11 @@ const BuyNow = styled.button`
     font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
-    transform: scale(1, 1);
+    transform: scale(1,1);
     transition: transform 0.5s ease;
 
     &:hover{
-        transform:scale(1.1,1.1)
+        transform:scale(1.1)
     }
     @media screen and (max-width:64rem){
         width: 9rem;
@@ -224,7 +224,7 @@ const MaylikeProductsWrapper = styled.div`
     h2{
         text-align: center;
         margin: 3rem;
-        color: #324d67;
+        color: #222;
         font-size: 1.8rem;
     }
 `
